@@ -1,12 +1,10 @@
-### Hi there, I am Claire Fitch. 
-
-This is where I'll share some of my sonic art, electronic literature and game score projects
+### This is where I'll share some of my sonic art, electronic literature and game score projects
 
 
 ---
 
 
-Now I'm Programme Director, MA/MSc in Music Technology, lecturer and researcher at Dundalk Institute of Technology
+I'm Programme Director, MA/MSc in Music Technology, lecturer and researcher at Dundalk Institute of Technology
 
 
 
