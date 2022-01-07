@@ -16,6 +16,25 @@ Now I'm Programme Director, MA/MSc in Music Technology, lecturer and researcher 
 
 My book, Sounding Emerging Media will be published by Routledge in April 2022. 
 
+---
+
+📺 Latest YouTube Videos
+
+<!-- YOUTUBE-VIDEOS-LIST:START -->
+<!-- YOUTUBE-VIDEOS-LIST:END -->
+
+
+▶ [...more YouTube videos](https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q?sub_confirmation=1)
+
+---
+
+📘 Latest Blog Articles
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+▶ [...more blog articles](https://clairefitch.wordpress.com)
+
 
 
 ---
