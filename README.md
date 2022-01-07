@@ -4,7 +4,7 @@ This is where I'll share some of my sonic art, electronic literature and game sc
 
 
 
-![Twitter Follow](https://img.shields.io/twitter/follow/ambiencellist?style=social)
+
 
 I completed my PhD in 2019, supervised by Prof. Michael Alcorn at Queen's University Belfast.
 
@@ -13,4 +13,4 @@ Unfortunately I'm a lapsed cellist, previously working for the RTÉ National Sym
 My book, Sounding Emerging Media will be published by Routledge in April 2022. 
 
 
-
+![Twitter Follow](https://img.shields.io/twitter/follow/ambiencellist?style=social)
