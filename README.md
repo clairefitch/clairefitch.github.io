@@ -1,4 +1,4 @@
-### Hi there, I am Claire Fitch. 
+### Hi there, I am Claire Fitch. This is where I'll share some of my sonic art, electronic literature and game score projects
 
 
 
