@@ -1,2 +1,6 @@
-### Hi there <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">, I am Claire Fitch!
+### Hi there, I am Claire Fitch. 
+
+
+
+![Twitter Follow](https://img.shields.io/twitter/follow/ambiencellist?style=social)
 
