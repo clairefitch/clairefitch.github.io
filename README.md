@@ -6,13 +6,14 @@ This is where I'll share some of my sonic art, electronic literature and game sc
 ---
 
 
+Now I'm Programme Director, MA/MSc in Music Technology, lecturer and researcher at Dundalk Institute of Technology
+
+
+
 I completed my PhD in 2019, supervised by Prof. Michael Alcorn at Queen's University Belfast.
 
 Previous work includes playing cello for the RTÉ National Symphony Orchestra. (1995-2012)
 
-
-
-Now I'm Programme Director, MA/MSc in Music Technology, lecturer and researcher at Dundalk Institute of Technology
 
 My book, Sounding Emerging Media will be published by Routledge in April 2022. 
 
