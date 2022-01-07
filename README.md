@@ -12,7 +12,7 @@ Previous work includes playing cello for the RTÉ National Symphony Orchestra. (
 
 
 
-Now I'm a lecturer at Dundalk Institute of Technology.
+Now I'm Programme Director, MA/MSc in Music Technology, lecturer and researcher at Dundalk Institute of Technology
 
 My book, Sounding Emerging Media will be published by Routledge in April 2022. 
 
