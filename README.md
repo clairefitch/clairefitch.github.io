@@ -22,9 +22,7 @@ My book, Sounding Emerging Media will be published by Routledge in April 2022.
 
 🧰 Toolbox
 
-<img src="https://www.reaper.fm/v5img/logo.jpg" alt="Reaper Logo" width="50" height="50"/> 
-<img src="https://cdn.worldvectorlogo.com/logos/unreal-1.svg" alt="Unreal Logo" width="50" height="50"/>
-<img src="https://cdn.worldvectorlogo.com/logos/unity-69.svg" alt="Unity Logo" width="50" height="50"/>
+<img src="https://www.reaper.fm/v5img/logo.jpg" alt="Reaper Logo" width="50" height="50"/> <img src="https://cdn.worldvectorlogo.com/logos/unreal-1.svg" alt="Unreal Logo" width="50" height="50"/<img src="https://cdn.worldvectorlogo.com/logos/unity-69.svg" alt="Unity Logo" width="50" height="50"/>
 
 ---
 
