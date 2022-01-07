@@ -4,32 +4,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 
 <head profile="http://gmpg.org/xfn/11"><meta charset="windows-1252">
-<title>fitchsounds</title>
-<link rel="icon" href="http://fitchsounds.com/favicon.ico" type="image/ico" />
+<title>Claire Fitch</title>
 
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="description" content="">
-<meta name="keywords" content="">
-<meta name="google-site-verification" content="JMbbFAXVidjN_Xt1nO3wtGVERGqE3XgNvbazZWi7yLw" />
-<link rel="stylesheet" href="styles/layout.css" type="text/css" />
-<script type="text/javascript" src="scripts/mootools.js"></script>
+
 </head>
 
-<body id="top">
-<div class="wrapper col1">
-  <div class="accordion">
-    <div id="socialise">
+<body>
+
+    <div>
       <ul>
         <li><a href="https://www.linkedin.com/in/fitchclaire/"><img src="images/linkedin.gif" alt="" /><span>LinkedIn</span></a></li>
         <li><a href="https://clairefitch.wordpress.com"><img src="images/WordPress.gif" alt="" /><span>WordPress</span></a></li>
         <li><a href="https://soundcloud.com/ambiencellist"><img src="images/soundcloud.gif" alt="" /><span>SoundCloud</span></a></li>
         <li><a href="http://www.youtube.com/user/clairefitch"><img src="images/youtube.gif" alt="" /><span>YouTube</span></a></li>
-        <li class="last"><a href="http://twitter.com/ambiencellist"><img src="images/twitter.gif" alt="" /><span>Twitter</span></a></li>
+        <li ><a href="http://twitter.com/ambiencellist"><img src="images/twitter.gif" alt="" /><span>Twitter</span></a></li>
       </ul>
-      <br class="clear" />
+      
     </div>
-  </div>
-</div>
+  
 <!-- ####################################################################################################### -->
 <div class="wrapper col2">
   <div id="header">
