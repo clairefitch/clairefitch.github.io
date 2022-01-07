@@ -24,7 +24,7 @@ My book, Sounding Emerging Media will be published by Routledge in April 2022.
 <!-- YOUTUBE-VIDEOS-LIST:END -->
 
 
-▶ [...more YouTube videos](https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q?sub_confirmation=1)
+▶ [...more YouTube videos](https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q)
 
 ---
 
