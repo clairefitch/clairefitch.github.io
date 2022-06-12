@@ -1,0 +1,87 @@
+
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset = "utf-8">
+    <title>Space</title>
+
+    
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/postProcessesLibrary/babylonjs.postProcess.min.js"></script>
+    <script src="https://cdn.babylonjs.com/proceduralTexturesLibrary/babylonjs.proceduralTextures.min.js"></script>
+    <script src="https://cdn.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <script src="https://cdn.babylonjs.com/viewer/babylon.viewer.js"></script>
+    
+    <style>
+        canvas { width: 100%; height: 100%;}
+    </style>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("renderCanvas");
+        var engine = new BABYLON.Engine(canvas, true);
+    
+        var createScene = function() {
+            var scene = new BABYLON.Scene(engine);
+
+            //scene.clearColor = new BABYLON.Color3.Black;
+
+            var camera = new BABYLON.ArcRotateCamera("camera", 0, 0.8, 100, new BABYLON.Vector3(0, 0, 0), scene);
+            camera.attachControl(canvas, false);
+
+            var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+            light.intensity = 0.7;
+
+        
+
+             //const box = BABYLON.MeshBuilder.CreateBox("box", {});
+            //box.position.x = 0.5;
+            //box.position.y = 1;
+
+            //const boxMaterial = new BABYLON.StandardMaterial("material", scene);
+            //boxMaterial.diffuseColor = BABYLON.Color3.Random();
+           //box.material = boxMaterial;
+
+            //box.actionManager = new BABYLON.ActionManager(scene);
+            //box.actionManager.registerAction(
+                 //new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickTrigger, 
+                //function (evt) {
+                     //const sourceBox = evt.meshUnderPointer;
+                     //sourceBox.position.x += 0.1;
+                    // sourceBox.position.y += 0.1;
+
+                    // boxMaterial.diffuseColor = BABYLON.Color3.Random();
+               
+                //}));
+            var ground = BABYLON.Mesh.CreateGround("ground", 100, 50 , 2, scene);
+            ground.position.y = 1;
+
+            var mat = new BABYLON.StandardMaterial("mat", scene);
+            var videoTexture = new BABYLON.VideoTexture("video", ["video.mp4"], scene, true, true);
+            mat.diffuseTexture = videoTexture;
+            ground.material = mat;
+
+            scene.onPointerUp = function () {
+                videoTexture.video.play();
+            
+            }
+                
+                return scene;
+            };
+
+        var scene = createScene();
+        engine.runRenderLoop(function() {
+        scene.render();
+
+        });
+        window.addEventListener("resize", function () {
+               engine.resize();
+           });
+    </script>
+
+</body>
+</html>
