@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Analysis Exercises</title>
+</head>
+<body>
+    <h1>Music Analysis Exercises</h1>
+    <label for="audioFile">Upload an audio file:</label>
+    <input type="file" id="audioFile" accept="audio/*">
+    <button onclick="analyzeAudio()">Analyze</button>
+    
+    <h2>Results</h2>
+    <p><strong>Detected BPM:</strong> <span id="bpm"></span></p>
+    <p><strong>Waveform:</strong></p>
+    <canvas id="waveformCanvas" width="500" height="200"></canvas>
+    <p><strong>Spectrogram:</strong></p>
+    <canvas id="spectrogramCanvas" width="500" height="200"></canvas>
+    
+    <script>
+        async function analyzeAudio() {
+            const fileInput = document.getElementById('audioFile');
+            if (!fileInput.files.length) {
+                alert('Please select an audio file first.');
+                return;
+            }
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.readAsArrayBuffer(file);
+            reader.onload = async function(event) {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const audioBuffer = await audioContext.decodeAudioData(event.target.result);
+                
+                // BPM Detection (Simple Peak Counting)
+                const peaks = getPeaks(audioBuffer.getChannelData(0));
+                const bpm = calculateBPM(peaks, audioBuffer.sampleRate);
+                document.getElementById('bpm').innerText = bpm ? bpm.toFixed(2) : 'Not detected';
+                
+                // Waveform Visualization
+                drawWaveform(audioBuffer);
+                
+                // Spectrogram Visualization
+                drawSpectrogram(audioBuffer, audioContext);
+            };
+        }
+
+        function getPeaks(data) {
+            let peaks = [];
+            for (let i = 1; i < data.length - 1; i++) {
+                if (data[i] > 0.8 && data[i] > data[i - 1] && data[i] > data[i + 1]) {
+                    peaks.push(i);
+                }
+            }
+            return peaks;
+        }
+
+        function calculateBPM(peaks, sampleRate) {
+            if (peaks.length < 2) return null;
+            let intervals = [];
+            for (let i = 1; i < peaks.length; i++) {
+                intervals.push((peaks[i] - peaks[i - 1]) / sampleRate * 60);
+            }
+            return 60 / (intervals.reduce((a, b) => a + b, 0) / intervals.length);
+        }
+
+        function drawWaveform(audioBuffer) {
+            const canvas = document.getElementById('waveformCanvas');
+            const ctx = canvas.getContext('2d');
+            const data = audioBuffer.getChannelData(0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            for (let i = 0; i < data.length; i += Math.floor(data.length / canvas.width)) {
+                let y = (0.5 - data[i]) * canvas.height;
+                ctx.lineTo(i / (data.length / canvas.width), y);
+            }
+            ctx.stroke();
+        }
+
+        function drawSpectrogram(audioBuffer, audioContext) {
+            const canvas = document.getElementById('spectrogramCanvas');
+            const ctx = canvas.getContext('2d');
+            const analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+            const bufferLength = analyser.frequencyBinCount;
+            const dataArray = new Uint8Array(bufferLength);
+            
+            const source = audioContext.createBufferSource();
+            source.buffer = audioBuffer;
+            source.connect(analyser);
+            source.start();
+            
+            function render() {
+                analyser.getByteFrequencyData(dataArray);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < bufferLength; i++) {
+                    ctx.fillStyle = `rgb(${dataArray[i]}, ${dataArray[i] / 2}, 150)`;
+                    ctx.fillRect(i * 2, canvas.height - dataArray[i], 2, dataArray[i]);
+                }
+                requestAnimationFrame(render);
+            }
+            render();
+        }
+    </script>
+</body>
+</html>
