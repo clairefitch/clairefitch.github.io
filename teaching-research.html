@@ -21,7 +21,7 @@
 const hero = {
   kicker: 'Section 06 · Teaching & Research',
   title: 'Teaching & Research',
-  blurb: 'Lecturer in Music at Dundalk Institute of Technology, Programme Director for the MA/MSc in Music Technology, Avid Certified Instructor for Sibelius, and PhD researcher from Queen\u2019s University Belfast.',
+  blurb: 'Lecturer in Music at Dundalk Institute of Technology, Programme Convenor for Certificate in Sound Design and Implementation for Interactive Media, Avid Certified Instructor for Sibelius, and PhD graduate from Queen\u2019s University Belfast.',
   img: 'https://clairefitch.github.io/images/DkIT.jpg',
 };
 
@@ -97,7 +97,7 @@ function PhDBlock() {
               ['Discipline',  'Music'],
               ['Title',       'The Unfolding of Sound: A Portfolio of Works'],
               ['Conferred',   '2019'],
-              ['Pure-QUB',   'https://pure.qub.ac.uk/en/studentTheses/the-unfolding-of-sound-a-portfolio-of-works/'],
+              ['Pure-QUB',   <a href="https://pure.qub.ac.uk/en/studentTheses/the-unfolding-of-sound-a-portfolio-of-works/">PhD Thesis →</a>],
             ].map(([k, v], i) => (
               <li key={i} style={{ padding: '12px 0', borderBottom: `1px solid ${SITE.rule}`, display: 'grid', gridTemplateColumns: '140px 1fr', gap: 16 }}>
                 <span className="mono" style={{ color: SITE.faint }}>{k}</span>
