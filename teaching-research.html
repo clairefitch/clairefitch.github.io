@@ -22,7 +22,7 @@ const hero = {
   kicker: 'Section 06 · Teaching & Research',
   title: 'Teaching & Research',
   blurb: 'Lecturer in Music at Dundalk Institute of Technology, Programme Director for the MA/MSc in Music Technology, Avid Certified Instructor for Sibelius, and PhD researcher from Queen\u2019s University Belfast.',
-  img: 'https://clairefitch.github.io/images/PS.jpg',
+  img: 'https://clairefitch.github.io/images/DkIT.jpg',
 };
 
 // ---------- 1. At a glance ----------
@@ -81,7 +81,7 @@ function PhDBlock() {
   return (
     <section id="phd" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
       <div className="works-card" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 56, alignItems: 'start' }}>
-        <div className="ph-img" style={{ aspectRatio: '4/5', backgroundImage: 'url(https://clairefitch.github.io/images/WWNBS.jpg)' }} />
+        <div className="ph-img" style={{ aspectRatio: '4/5', backgroundImage: 'url(https://clairefitch.github.io/images/QUB.png)' }} />
         <div>
           <div className="mono" style={{ color: SITE.accent, marginBottom: 14 }}>Doctoral Research</div>
           <h3 className="display display-56" style={{ fontSize: 52, margin: 0, marginBottom: 22 }}>PhD · Queen{'\u2019'}s University Belfast.</h3>
@@ -89,7 +89,7 @@ function PhDBlock() {
             <em>The Unfolding of Sound: A Portfolio of Works.</em> Conferred in 2019. A practice-based approach to sonic art and electroacoustic composition, drawing methodologies from electronic literature and game development.
           </p>
           <p style={{ marginTop: 16, fontSize: 18, color: SITE.muted, textWrap: 'pretty' }}>
-            The research was later expanded into the monograph <em>Sounding Emerging Media</em> (Routledge, 2022).
+            The research was later expanded into the monograph <em>Sounding Emerging Media</em>, published by Routledge (Fitch, 2022).
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: '28px 0 0', borderTop: `1px solid ${SITE.rule}` }}>
             {[
@@ -97,6 +97,7 @@ function PhDBlock() {
               ['Discipline',  'Music'],
               ['Title',       'The Unfolding of Sound: A Portfolio of Works'],
               ['Conferred',   '2019'],
+              ['Pure-QUB',   'https://pure.qub.ac.uk/en/studentTheses/the-unfolding-of-sound-a-portfolio-of-works/'],
             ].map(([k, v], i) => (
               <li key={i} style={{ padding: '12px 0', borderBottom: `1px solid ${SITE.rule}`, display: 'grid', gridTemplateColumns: '140px 1fr', gap: 16 }}>
                 <span className="mono" style={{ color: SITE.faint }}>{k}</span>
@@ -149,7 +150,6 @@ function YearList({ rows, secondColLabel }) {
 function TeachingCareer() {
   const positions = [
     ['2015–present', 'Dundalk Institute of Technology', 'Lecturer · Department of Creative Arts, Media and Music'],
-    ['2014–2025',    'Thinkspace Education',            'Tutor'],
     ['2014–2016',    'Pulse College, Dublin',           'Lecturer · Music Production Faculty'],
     ['2013–2016',    'Griffith College, Dublin',        'Lecturer · Computer Science Faculty'],
     ['2012–2015',    'Cenit College, Naas',             'Lecturer · Game Design Faculty'],
@@ -160,10 +160,10 @@ function TeachingCareer() {
     <section id="teaching" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
         <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Teaching career.</h2>
-        <div className="mono" style={{ color: SITE.muted }}>Programme Director · MA/MSc in Music Technology</div>
+        <div className="mono" style={{ color: SITE.muted }}>Programme Convenor · Certificate in Sound Design and Implementation for Interactive Media</div>
       </div>
       <p style={{ fontSize: 19, maxWidth: 760, color: SITE.muted, textWrap: 'pretty', marginBottom: 36 }}>
-        Since 2015 a lecturer in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology. Programme Director for the MA/MSc in Music Technology since 2018. Earlier teaching across Pulse College, Griffith College, Cenit College and Music Generation Louth — and 17 years with the RTÉ National Symphony Orchestra before that.
+        Since 2015 a lecturer in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology. Programme Convenor for the Certificate in Sound Design and Implementation for Interactive Media since 2019. Earlier teaching across Pulse College, Griffith College, Cenit College and Music Generation Louth — and 17 years with the RTÉ National Symphony Orchestra before that.
       </p>
       <YearList rows={positions} secondColLabel="Institution" />
     </section>
@@ -182,7 +182,7 @@ function Qualifications() {
   ];
   const training = [
     ['2026',         'National Forum',  'Digital Badge in Universal Design for Teaching & Learning'],
-    ['2025–present', 'In progress',     'MA in Learning and Teaching'],
+    ['2025–present', 'In progress at DkIT',     'MA in Learning and Teaching'],
     ['2022',         'Avid',            'Certified Instructor · Sibelius 101 & 110'],
     ['2022',         'Epigeum',         'Professional Skills for Research Leaders'],
     ['2021',         'Epigeum',         'Supervising Doctoral Studies'],
@@ -208,6 +208,7 @@ function Qualifications() {
 // ---------- 6. Leadership & service ----------
 function Leadership() {
   const rows = [
+    ['2026–present',    'Skillnet Ireland',                                        'Programme lead · Certificate in Sound Design and Implementation for Interactive Media'],
     ['2025–present', 'European Commission',                                    'European Innovation Council · Quality Check Expert'],
     ['2024–2025',    'DkIT & DCU',                                              'Graduate Research School Board · Vice Chair'],
     ['2023–2025',    'Shared Island Civic Fund',                                'Bid leadership · Shared Roots & Routes (Lifestyle Development Group, Drogheda; Rural Health Partnership, Armagh)'],
