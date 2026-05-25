@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sonic Art · Claire Fitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="site.jsx"></script>
+
+<script type="text/babel">
+const hero = {
+  kicker: 'Section 01 · Sonic Art',
+  title: 'Sonic Art',
+  blurb: 'Practice-based works for voice, cello, text and field — broadcast on RTÉ Lyric FM and performed at festivals and galleries across Ireland and the UK.',
+  img: 'https://clairefitch.github.io/images/BI-1.jpg',
+};
+
+const entries = [
+  {
+    year: '2023', kicker: 'Galway Arts Festival',
+    title: 'Happening',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'Improvisation for cello and artist with David Copperwhite, presented as part of Onomatopoeia at The Printworks during the Galway Arts Festival, 2023.',
+    ],
+    credits: [
+      ['With',     'David Copperwhite'],
+      ['Venue',    'The Printworks, Galway'],
+      ['Festival', 'Galway Arts Festival, 2023'],
+      ['Exhibition', 'Onomatopoeia'],
+    ],
+    links: [],
+  },
+  {
+    year: '2022', kicker: 'Highlanes Gallery, Drogheda',
+    title: 'Now',
+    image: 'https://clairefitch.github.io/images/WWNBS.jpg',
+    body: [
+      'Improvisation for cello and electronics, presented in Some Shapes of Time at the Highlanes Gallery, Drogheda, 2022.',
+    ],
+    credits: [
+      ['Venue',     'Highlanes Gallery, Drogheda'],
+      ['Exhibition', 'Some Shapes of Time'],
+      ['Year',      '2022'],
+    ],
+    links: [],
+  },
+  {
+    year: '2021', kicker: 'Commission',
+    title: 'Becoming Imperceptible',
+    embedId: null,
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'Commissioned by thirtythree-45 and Droichead Arts for the podcast Where Are We Now?, curated by Brian Hegarty (Drogheda, 2021).',
+      'Sound and text fold into one another as the work asks where the listener stands in a moment of withdrawal — sonic territory at once domestic, public and imagined.',
+    ],
+    credits: [['Curator', 'Brian Hegarty'], ['Commissioned by', 'thirtythree-45 / Droichead Arts'], ['Year', '2021']],
+    links: [['Listen on thirtythree-45', 'https://thirtythree-45.com/where-are-we-now-episode-1/']],
+  },
+  {
+    year: '2020', kicker: 'Broadcast · RTÉ Lyric FM',
+    title: 'Murdering The Time',
+    embedId: 'TZN7weJ2vUA',
+    body: [
+      'Sound units and vocal utterances are neither atom nor Cartesian points, but an elastic fold stretching the potential of the sound world. A multiplicity of sounds folds into a unity, here inspired by Frank Zappa and The Mothers of Invention (Return of the son of Monster Magnet, 1966), Mauricio Kagel (Anagramma, 1957/58) and Lewis Carroll (Alice\u2019s Adventures in Wonderland, 1865).',
+      'Broadcast on The Blue of The Night, RTÉ Lyric FM, 2020.',
+    ],
+    credits: [['Voice', 'Raven'], ['Text', 'Claire Fitch'], ['Inspiration', 'Chapter 7, Alice\u2019s Adventures in Wonderland']],
+    links: [['SoundCloud', 'https://soundcloud.com/clairefitch/murdering-the-time']],
+  },
+  {
+    year: '2020', kicker: 'Drogheda · Louth',
+    title: 'Populated Solitude',
+    embedId: 'kSX06zQBBOI',
+    body: [
+      '1963, Drogheda, County Louth. Brendan Behan sits in the bar of the White Horse Hotel.',
+      'An artist\u2019s response to an interview with Paul Murphy, former Editor of the Drogheda Independent, describing his attempt to interview Behan that day.',
+    ],
+    credits: [['Voice', 'Paul Murphy'], ['Text excerpts', 'Brendan Behan, Drogheda Independent, Paul Murphy'], ['Photography', 'Sean Collins']],
+    links: [['WordPress', 'https://populatedsolitude2020.wordpress.com/'], ['Twitter', 'https://twitter.com/PopSolitude']],
+  },
+  {
+    year: '2015', kicker: 'Field recording',
+    title: 'Three Days in May',
+    embedId: 'o_W0YvAycCE',
+    body: [
+      'Recordings from three walks around Drogheda and Laytown in May 2015 are folded into each other as a mass — no foreground, middle ground, or background, no preference.',
+      'Texture is shaped by the natural rise and fall in amplitude and frequency of the source material.',
+    ],
+    credits: [],
+    links: [['Gamescore version', 'https://clairefitch.github.io/3DIM/3daysinmay.html']],
+  },
+  {
+    year: '2015', kicker: 'Sonic Lab QUB',
+    title: 'Written in his Voice',
+    embedId: 'ztqgyphYG6s',
+    body: [
+      'An electroacoustic response to Victor Daniels recounting his experiences during World War II. Breaking a silence of almost 70 years, he describes his involvement in "Operation Gomorrah" — bombing raids on Essen and Hamburg as a 23-year-old Sergeant in RAF 76 Squadron, being shot down over enemy territory in July 1943, and his subsequent captivity as a prisoner of war in Stalag 4B.',
+    ],
+    credits: [['Voice', 'Victor Daniels'], ['Performance', 'Sonic Lab, QUB, Belfast, 2015']],
+    links: [['Watch on YouTube', 'https://youtu.be/ztqgyphYG6s']],
+  },
+  {
+    year: '2019', kicker: 'First Fortnight · New Theatre',
+    title: 'Raven and The Crone',
+    image: 'https://clairefitch.github.io/images/WWNBS.jpg',
+    body: [
+      'A collaborative work presented at First Fortnight at The New Theatre, Dublin, in 2019.',
+    ],
+    credits: [
+      ['With',    'Damien Molloy, Raven, Nicki Rourke'],
+      ['Festival', 'First Fortnight, 2019'],
+      ['Venue',   'The New Theatre, Dublin'],
+    ],
+    links: [],
+  },
+  {
+    year: '2019', kicker: 'Broadcast · RTÉ Lyric FM',
+    title: 'ValenT',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'Composed for The Blue of The Night on RTÉ Lyric FM, broadcast in 2019.',
+    ],
+    credits: [
+      ['Broadcast', 'The Blue of The Night, RTÉ Lyric FM, 2019'],
+    ],
+    links: [],
+  },
+  {
+    year: '2020', kicker: 'Scribbledehobble · Kaleidoscope',
+    title: 'Mrs Matchwell',
+    embedId: 'f_pzH9EKRLU',
+    body: [
+      'A video example from the larger work Mrs McNa (2020), drawing on the two characters Mrs McNamara and Mrs Matchwell who appear in chapters 29 and 30 of Sheridan Le Fanu\u2019s The House by the Churchyard (1863).',
+      'Exhibited as part of Scribbledehobble, curated by Bernard Clarke and Kaleidoscope at the Museum of Literature Ireland, 2020.',
+    ],
+    credits: [['Voice', 'Martina Murray'], ['Recital', 'Bernard Clarke and Martina Murray'], ['Text', 'Sheridan Le Fanu']],
+    links: [['Twitter', 'https://twitter.com/MrsMcNa'], ['SoundCloud', 'https://soundcloud.com/mrs-mcna'], ['YouTube', 'https://www.youtube.com/channel/UCBzhJhJH2A5lQrJLizx6Hpg']],
+  },
+  {
+    year: '2013', kicker: 'Hilltown New Music Festival',
+    title: 'We Called It Dirt',
+    image: 'https://clairefitch.github.io/images/WWNBS.jpg',
+    body: [
+      'Transmedia text (Twitter, SoundCloud) premiered at the Hilltown New Music Festival, Castlepollard, in 2013. Later realised as a gamescore in 2020.',
+    ],
+    credits: [
+      ['Festival', 'Hilltown New Music Festival, 2013'],
+      ['Venue',    'Castlepollard, Ireland'],
+    ],
+    links: [['Gamescore (2020)', 'https://clairefitch.github.io/WCID/wecalleditdirt.html']],
+  },
+  {
+    year: '2012', kicker: 'Hilltown New Music Festival',
+    title: 'pHone',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'Performed at the Hilltown New Music Festival, Castlepollard, in 2012.',
+    ],
+    credits: [
+      ['Festival', 'Hilltown New Music Festival, 2012'],
+      ['Venue',    'Castlepollard, Ireland'],
+    ],
+    links: [],
+  },
+  {
+    year: '2013', kicker: 'Hex · Navajowhite',
+    title: 'FFDEAD',
+    embedId: '4UOjyX69ucs',
+    body: [
+      'Inspired by the hexadecimal code for the JavaScript colour Navajowhite. A sonnet was written and recorded, then used as the audio basis for the first gamescore.',
+    ],
+    credits: [],
+    links: [['Gamescore', 'https://clairefitch.github.io/FFDEAD/ffdead.html']],
+  },
+  {
+    year: '2015', kicker: 'After Mika Vainio',
+    title: 'Unity Beeps',
+    embedId: 'ipfpPUmPcxY',
+    body: [
+      'Two beeps — one at 110 bpm, one at 111 bpm. It takes two minutes for them to move into sync, and another two minutes for them to fall out again.',
+    ],
+    credits: [],
+    links: [['Gamescore', 'https://clairefitch.github.io/UnityBeeps/UnityBeeps.html']],
+  },
+];
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <DetailPage hero={hero} entries={entries} current="sonic-art" />
+);
+</script>
+</body>
+</html>

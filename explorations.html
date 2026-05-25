@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claire Fitch — Design Explorations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #f0eee9; }
+  #root { width: 100%; height: 100vh; }
+  /* Within artboards, allow inner scroll for very tall page mockups would break canvas focus; instead set explicit heights */
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="v1-quarterly.jsx"></script>
+<script type="text/babel" src="v2-index.jsx"></script>
+<script type="text/babel" src="v3-spotlight.jsx"></script>
+
+<script type="text/babel">
+function App() {
+  return (
+    <DesignCanvas>
+      <DCSection id="hero" title="Claire Fitch — website redesign" subtitle="Three directions, all quiet & academic. Click any artboard to focus full-screen. Hero treatments differ; outbound links go to your existing github pages.">
+        <DCArtboard id="v1" label="A · The Quarterly — editorial masthead" width={1280} height={3400}>
+          <V1Page />
+        </DCArtboard>
+        <DCArtboard id="v2" label="B · The Index — catalogue / minimal hero" width={1280} height={3200}>
+          <V2Page />
+        </DCArtboard>
+        <DCArtboard id="v3" label="C · Spotlight — full-bleed featured work" width={1280} height={3600}>
+          <V3Page />
+        </DCArtboard>
+      </DCSection>
+      <DCPostIt x={40} y={40} w={360}>
+        Merged bio (Bio 1 + Bio 2) used across all three. All "Learn more" / "Full index" / "View all" links still point to your existing clairefitch.github.io detail pages.{"\n\n"}Tell me which direction (or which bits of each) you'd like, and I'll iterate.
+      </DCPostIt>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

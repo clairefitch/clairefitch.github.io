@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Electronic Literature · Claire Fitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="site.jsx"></script>
+
+<script type="text/babel">
+const hero = {
+  kicker: 'Section 02 · Electronic Literature',
+  title: 'Electronic Literature',
+  blurb: 'Transmedia works combining sound, text and image. Presented at Electronic Literature Organization conferences in Cork (2019), Florida (2020) and Bergen (2021).',
+  img: 'https://clairefitch.github.io/images/WWNBS.jpg',
+};
+
+const entries = [
+  {
+    year: '2021', kicker: 'ELO Covid E-Lit Exhibition · Bergen',
+    title: 'Ear For The Surge',
+    embedId: '0uVA6imBwuo',
+    body: [
+      'Designed to be heard. A work about rage, inspired by Homeric hexameter and coronavirus. Spoken word, stitched together, woven into layers.',
+      'Exhibited at the ELO 2021 COVID Exhibition. Also lives as a Twitterbot, a YouTube channel and a WordPress blog.',
+    ],
+    credits: [],
+    links: [
+      ['COVID Exhibition', 'https://eliterature.org/elo2021/covid/'],
+      ['Twitterbot', 'https://twitter.com/EarSurge'],
+      ['YouTube', 'https://www.youtube.com/channel/UCuDaPs-pz1M6ARoTz6_1awA/videos'],
+      ['WordPress', 'https://earforthesurge.wordpress.com/'],
+    ],
+  },
+  {
+    year: '2020', kicker: 'ELO Performances · Florida',
+    title: 'SFBookDraft1',
+    embedId: '6Xmot_LRyao',
+    body: [
+      'A collaboration with Kelly McErlean, exhibited at the ELO 2020 Performances track. A journey starting with a landscape, fuelled by chaos.',
+      'Available as a Twitterbot, a YouTube channel and a WordPress blog.',
+    ],
+    credits: [['With', 'Kelly McErlean']],
+    links: [
+      ['ELO 2020 page', 'https://stars.library.ucf.edu/elo2020/live/performances/3/'],
+      ['Twitterbot', 'https://twitter.com/Draft1Sf'],
+      ['YouTube', 'https://www.youtube.com/channel/UCM0E-SfrrR90xrJZzpUwTWg/videos'],
+      ['WordPress', 'https://sfbookdraft1.wordpress.com'],
+    ],
+  },
+  {
+    year: '2020', kicker: 'Open form · headphones',
+    title: 'We Called It Dirt',
+    embedId: 'Tl6pSBrHDag',
+    body: [
+      'An open form work, accessed using headphones or speakers and through the web browser. Type W, E, C, A, L, L, E, D, I, T, D, I, R, T.',
+      'We never called it clay, we called it dirt. A family anchors into the land. My life is not an open book — it\u2019s electronic literature now.',
+    ],
+    credits: [['Vocal', 'John Pat McNamara'], ['Text', 'Claire Fitch'], ['Inspiration', 'Interview between Michael J. Maguire and John Pat McNamara']],
+    links: [['Gamescore', 'https://clairefitch.github.io/WCID/wecalleditdirt.html']],
+  },
+  {
+    year: '2014', kicker: 'HearSay Prize shortlist',
+    title: 'Look (FFEBCD)',
+    embedId: 'EmQsC5pbGPw',
+    body: [
+      'Shortlisted for the HearSay Prize in 2014. Look (FFEBCD) uses the hex value of the JavaScript colour blanchedalmond as inspiration for a text spoken, rapped, sung and vocalised by a crowdsourced group.',
+      'Electroacoustic editing produced many short clips, performed via the web browser.',
+    ],
+    credits: [],
+    links: [['Gamescore', 'https://clairefitch.github.io/Look/Look.html']],
+  },
+];
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <DetailPage hero={hero} entries={entries} current="electronic-literature" />
+);
+</script>
+</body>
+</html>

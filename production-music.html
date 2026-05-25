@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Production Music &amp; SFX · Claire Fitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="site.jsx"></script>
+
+<script type="text/babel">
+const hero = {
+  kicker: 'Section 05 · Production Music & SFX',
+  title: 'Production Music & SFX',
+  blurb: 'Twenty-plus years of catalogue music, sound effects and commissioned work for television, film, games and podcasts. Recent credits include Abú Media’s Fidil Ghorm (TG4, 2024). Past clients include Intel, AMD, Adobe, the Blender Institute, Riverdeep, Forfás and the European Commission.',
+  img: 'https://clairefitch.github.io/images/DepositPhotos.png',
+};
+
+const entries = [
+  {
+    year: '2024', kicker: 'Abú Media · TG4',
+    title: 'Fidil Ghorm',
+    image: 'https://clairefitch.github.io/images/DepositPhotos.png',
+    body: [
+      'Orchestral stems technician for Abú Media’s Fidil Ghorm — broadcast on TG4 in 2024.',
+    ],
+    credits: [
+      ['Role',       'Orchestral Stems Technician'],
+      ['Production', 'Abú Media'],
+      ['Broadcaster', 'TG4'],
+      ['Year',       '2024'],
+    ],
+    links: [],
+  },
+  {
+    year: '2023', kicker: 'Magnatune · Album',
+    title: 'Another Day',
+    image: 'https://clairefitch.github.io/images/DepositPhotos.png',
+    body: [
+      'License the album direct from Magnatune. Suitable for television, film, advertising and games.',
+    ],
+    credits: [['Label', 'Magnatune'], ['Year', '2023']],
+    links: [['Magnatune · Fitch', 'http://magnatune.com/artists/fitch/']],
+  },
+  {
+    year: '2009', kicker: 'Magnatune · Album',
+    title: 'Celocity',
+    image: 'https://clairefitch.github.io/images/DepositPhotos.png',
+    body: [
+      'Cello-led album, released on Magnatune in 2009. Available for direct licensing.',
+    ],
+    credits: [['Label', 'Magnatune'], ['Year', '2009']],
+    links: [['Magnatune · Fitch', 'http://magnatune.com/artists/fitch/']],
+  },
+  {
+    year: '2005', kicker: 'Magnatune · Album',
+    title: 'Ambiencellist Part II',
+    image: 'https://clairefitch.github.io/images/DepositPhotos.png',
+    body: [
+      'The second Ambiencellist album, released on Magnatune in 2005.',
+    ],
+    credits: [['Label', 'Magnatune'], ['Year', '2005']],
+    links: [['Magnatune · Fitch', 'http://magnatune.com/artists/fitch/']],
+  },
+  {
+    year: '2003', kicker: 'Magnatune · Album',
+    title: 'Ambiencellist',
+    image: 'https://clairefitch.github.io/images/DepositPhotos.png',
+    body: [
+      'The original Ambiencellist album, released on Magnatune in 2003.',
+    ],
+    credits: [['Label', 'Magnatune'], ['Year', '2003']],
+    links: [['Magnatune · Fitch', 'http://magnatune.com/artists/fitch/']],
+  },
+  {
+    year: '—', kicker: 'Royalty-free libraries',
+    title: 'Stock libraries',
+    image: 'https://clairefitch.github.io/images/DepositPhotos.png',
+    body: [
+      'A selection of tracks and sound effects available for royalty-free licensing across FilmPac, Pond5, Deposit Photos, MotionElements, Music Grid, Melodicloud and the Infinity Music Library.',
+      'For specific commissions, custom cues, or sound design enquiries, please get in touch.',
+    ],
+    credits: [],
+    links: [
+      ['FilmPac', 'https://filmpac.com/music/artists/A00213/ambiencellist/'],
+      ['Pond5', 'https://www.pond5.com/artist/ambiencellist'],
+      ['Deposit Photos', 'https://depositphotos.com/portfolio-79469066.html'],
+      ['Music Grid', 'https://www.musicgrid.com/listing?artist=1689'],
+      ['Melodicloud', 'https://www.melodicloud.com/artist/ambiencellist/'],
+      ['Motion Elements', 'https://www.motionelements.com/contributors/ambiencellist'],
+    ],
+  },
+  {
+    year: '2004–2015', kicker: 'Selected commissions',
+    title: 'Custom music & sound design',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'Composition, sound design, dialogue and stems for games, advertising, theatre, film and television. Below: a selection of credits across two decades, from Intel’s educational games to the Blender Institute’s open-source short, and from Bigfish casual titles to AMD launch trailers.',
+      'Get in touch for new commissions, bespoke cues, or sound design enquiries.',
+    ],
+    credits: [
+      ['2015 · App Store, Google Play', 'Binary Pie Games — Stellar Fighter · Composer & Sound Designer'],
+      ['2013 · App Store',              'Rongella — Algebalance · Composer & Sound Designer'],
+      ['2012 · Bigfish Games',          'Darkwater Studios — Dead Hungry Diner · Composer & Sound Designer'],
+      ['2010 · Jolt Online Gaming',     'Jolt — Playboy Manager · Composer & Sound Designer'],
+      ['2009 · Adobe',                  'CanDo Interactive — Cybershock · Composer & Sound Designer'],
+      ['2009 · NI Science Park',         'CanDo Interactive — Thompson’s Dock · Composer & Sound Designer'],
+      ['2008 · Blender Institute',      'YoFrankie! · Composer & Sound Designer'],
+      ['2007 · Forfás',                 'CanDo Interactive — NanoQuest · Composer & Sound Designer'],
+      ['2005 · AMD',                    'Torc Interactive — Dreadnought · Composer'],
+      ['2005 · RiverDeep',              'Capture Productions — Berenstein Bears · MIDI Stems Technician'],
+      ['2004 · Intel',                  'Kapooki Games — Eureka! FutureSkool · Composer & Sound Designer'],
+    ],
+    links: [['Open the contact form', 'contact.html#enquiry-commission']],
+  },
+];
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <DetailPage hero={hero} entries={entries} current="production-music" />
+);
+</script>
+</body>
+</html>

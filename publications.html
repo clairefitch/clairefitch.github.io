@@ -1,106 +1,128 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Claire Fitch | Publications</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		
-	</head>
-	<body class="is-preload" class="template">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Publications · Claire Fitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
 
-		<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="title">Publications </a>
-				<nav>
-					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="sonicart.html">Sonic Art</a></li>
-						<li><a href="electronicliterature.html">Electronic Literature</a></li>
-						<li><a href="gamescores.html" >Game Scores</a></li>
-						<li><a href="publications.html" class="active">Publications</a></li>
-						<li><a href="productionmusic.html" >Production Music</a></li>
-					</ul>
-				</nav>
-			</header>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<script type="text/babel" src="site.jsx"></script>
 
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Sounding Emerging Media</h1>
-							
-							<iframe width="560" height="330" src="images/SEM.jpg" frameborder="0" ></iframe>
-							<p>Sounding Emerging Media, <a href=" https://www.routledge.com/Sounding-Emerging-Media/Fitch/p/book/9780367495480">first edition</a>, published April 2022. Details a practice-based approach to sonic art and electroacoustic composition, drawing on methodologies inspired by the production of electronic literature, and game development.</p>
+<script type="text/babel">
+const hero = {
+  kicker: 'Section 04 · Publications',
+  title: 'Publications',
+  blurb: 'Across augmented reality, web and print: an IEEE conference paper (ICVARS 2025), a chapter in Kylie Minogue: Critical Insights (Bloomsbury, 2024), the AR zine (RE)VERB #1 (2022), Anthem Press (2021), and a monograph for Routledge (2022).',
+  img: 'https://clairefitch.github.io/images/PS.jpg',
+};
 
-						</div>
-					
+const entries = [
+  {
+    year: '2025', kicker: 'IEEE Conference Paper · ICVARS',
+    title: 'Gamification and Interactivity in VRET with 6DoF',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'An exploratory study on gamification and interactivity in Virtual Reality Exposure Therapy (VRET) with six degrees of freedom.',
+      'Presented at the International Conference on Intelligent Computing and Virtual & Augmented Reality Simulations (ICVARS) 2025, Birmingham, UK. Published in the IEEE conference proceedings, pp. 136–144.',
+    ],
+    credits: [
+      ['Authors',     'Hanlon, S.; Fitch, C.; Morris, P.'],
+      ['Conference',  'ICVARS 2025, Birmingham, UK'],
+      ['DOI',         '10.1109/ICVARS66454.2025.11198751'],
+    ],
+    links: [
+      ['IEEE Xplore (DOI)', 'https://doi.org/10.1109/ICVARS66454.2025.11198751'],
+    ],
+  },
+  {
+    year: '2024', kicker: 'Bloomsbury · Book chapter',
+    title: 'Can’t Get You Out Of My Web',
+    image: 'https://clairefitch.github.io/images/WWNBS.jpg',
+    body: [
+      '“Can’t Get You Out Of My Web: Remixing Kylie as Digital Creative Practice” — a book chapter exploring the use of pop iconography as material for transmedia composition.',
+      'In O’Neill, S. and Pramaggiore, M. (eds.), Kylie Minogue: Critical Insights into Music and Media Celebrity, Bloomsbury Academic, 2024.',
+    ],
+    credits: [
+      ['Editors',   'Stephen O’Neill & Maria Pramaggiore'],
+      ['Publisher', 'Bloomsbury Academic'],
+      ['Year',      '2024'],
+    ],
+    links: [
+      ['Bloomsbury · Kylie Minogue: Critical Insights', 'https://www.bloomsbury.com/uk/kylie-minogue-9781501391286/'],
+    ],
+  },
+  {
+    year: '2022', kicker: 'Routledge · Monograph',
+    title: 'Sounding Emerging Media',
+    image: 'https://clairefitch.github.io/images/PS.jpg',
+    body: [
+      'A practice-based approach to sonic art and electroacoustic composition, drawing on methodologies inspired by the production of electronic literature and game development.',
+      'Published by Routledge in 2022.',
+    ],
+    credits: [['Publisher', 'Routledge'], ['Year', '2022'], ['ISBN', '978-0-367-49548-0']],
+    links: [
+      ['Routledge', 'https://www.routledge.com/Sounding-Emerging-Media/Fitch/p/book/9780367495480'],
+      ['Amazon UK', 'https://www.amazon.co.uk/Sounding-Emerging-Media-Claire-Fitch/dp/0367495481/'],
+    ],
+  },
+  {
+    year: '2022', kicker: '(RE)VERB #1 · Augmented Reality',
+    title: 'Vanguard Voices',
+    image: 'https://clairefitch.github.io/images/WWNBS.jpg',
+    body: [
+      'An augmented-reality \u201cwalking web\u201d published in (RE)VERB #1.',
+      'Investigates locations around Dublin where Anna Parnell, Maud Gonne and Jennie Wyse-Power worked for the Ladies\u2019 Land League, Inghínídhe na hÉireann and Cumann na mBan.',
+    ],
+    credits: [['With', 'Kelly McErlean, Martina Murray'], ['Publication', '(RE)VERB #1, Gesso']],
+    links: [
+      ['(RE)VERB #1', 'https://www.gesso.app/reverb-issue-1'],
+      ['Gesso collection', 'https://gesso.fm/collections/vanguard-voices1'],
+    ],
+  },
+  {
+    year: '2021', kicker: 'Anthem Press · Book chapter',
+    title: 'Folding, Unfolding, Refolding Sound',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'A book chapter in Digital Art in Ireland: New Media and Irish Artistic Practice, edited by James O\u2019Sullivan. Anthem Press, 2021.',
+    ],
+    credits: [['Editor', 'James O\u2019Sullivan'], ['Publisher', 'Anthem Press']],
+    links: [['Anthem Press', 'https://anthempress.com/digital-art-in-ireland-pdf']],
+  },
+  {
+    year: '2020', kicker: 'thirtythree-45 · Podcast episode',
+    title: 'Becoming Imperceptible',
+    image: 'https://clairefitch.github.io/images/BI-1.jpg',
+    body: [
+      'A podcast episode in Where Are We Now? #1, edited by Brian Hegarty for thirtythree-45 / Droichead Arts.',
+    ],
+    credits: [['Editor', 'Brian Hegarty'], ['Publisher', 'thirtythree-45 / Droichead Arts']],
+    links: [['Listen', 'https://thirtythree-45.com/where-are-we-now-episode-1/']],
+  },
+  {
+    year: '2021', kicker: 'ELO Covid E-Lit Exhibition',
+    title: 'Ear For The Surge',
+    image: 'https://clairefitch.github.io/images/WWNBS.jpg',
+    body: [
+      'A web-native work selected for the Electronic Literature Organisation\u2019s COVID Exhibition, presented at the ELO 2021 conference in Bergen, Norway.',
+    ],
+    credits: [['Publication', 'ELO 2021 COVID Exhibition']],
+    links: [['COVID Exhibition', 'https://www.eliterature.org/elo2021/covid/']],
+  },
+];
 
- <!-- Main 2 -->
- 
-	<div class="inner">
-		<h1 class="major">Vanguard Voices</h1>
-		<iframe width="560" height="298" src="images/VV.jpg" frameborder="0" ></iframe>
-		<p>A collaboration with Kelly McErlean and Martina Murray, Vanguard Voices is an augmented reality 'walking web', published in <a href="https://gesso.fm/collections/vanguard-voices1">(RE)VERB #1</a>. </p>
-			
-			
-
-	</div>
-
-<!-- Main 3 -->
- 
-<div class="inner">
-	<h1 class="major">Folding, Unfolding, Refolding Sound</h1>
-	<iframe width="560" height="276" src="images/FURS.jpg" frameborder="0"></iframe>
-	<p>Book chapter in <a href="https://anthempress.com/digital-art-in-ireland-pdf">"Digital Art in Ireland: New Media and Irish Artistic Practice"</a> (ed) James O'Sullivan. Anthem Press, 2021.</p>
-		
-		
-
-</div>
-
-
-<!-- Main 3 -->
- 
-<div class="inner">
-	<h1 class="major">Becoming Imperceptible</h1>
-	<iframe width="560" height="413" src="images/BI2.jpg" frameborder="0"></iframe>
-	<p>Podcast <a href="https://thirtythree-45.com/where-are-we-now-episode-1/">"Where are we now? #1"</a> (ed) Brian Hegarty, thirty-three 45 and Drogheda Arts, 2021.</p>
-		
-		
-
-</div>
-</section>
-							
-						  
-						
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Claire Fitch. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <DetailPage hero={hero} entries={entries} current="publications" />
+);
+</script>
+</body>
 </html>

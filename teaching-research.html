@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teaching &amp; Research · Claire Fitch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="site.jsx"></script>
+
+<script type="text/babel">
+const hero = {
+  kicker: 'Section 06 · Teaching & Research',
+  title: 'Teaching & Research',
+  blurb: 'Lecturer in Music at Dundalk Institute of Technology, Programme Director for the MA/MSc in Music Technology, Avid Certified Instructor for Sibelius, and PhD researcher from Queen\u2019s University Belfast.',
+  img: 'https://clairefitch.github.io/images/PS.jpg',
+};
+
+// ---------- 1. At a glance ----------
+function CredentialsStrip() {
+  const creds = [
+    ['FHEA · 2025',          'Fellow of Advance HE'],
+    ['PhD · 2019',           'Queen\u2019s University Belfast'],
+    ['Lecturer · since 2015', 'Dundalk Institute of Technology'],
+    ['ACI · 2022',           'Avid Certified Instructor for Sibelius'],
+  ];
+  return (
+    <section style={{ padding: '72px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
+      <div className="mono" style={{ color: SITE.accent, marginBottom: 24 }}>At a glance</div>
+      <div className="credentials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }}>
+        {creds.map(([k, v]) => (
+          <div key={k} style={{ borderTop: `2px solid ${SITE.ink}`, paddingTop: 16 }}>
+            <div className="mono" style={{ color: SITE.faint, marginBottom: 8 }}>{k}</div>
+            <div className="display" style={{ fontSize: 22, lineHeight: 1.2, textWrap: 'pretty' }}>{v}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ---------- 2. Research statement ----------
+function ResearchStatement() {
+  return (
+    <section style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 64, alignItems: 'start' }}>
+        <div>
+          <div className="mono" style={{ color: SITE.accent, marginBottom: 16 }}>Research</div>
+          <h2 className="display display-72" style={{ fontSize: 56, margin: 0 }}>
+            At the convergence of audio, visuals and text.
+          </h2>
+        </div>
+        <div style={{ fontSize: 20, lineHeight: 1.55 }}>
+          <p style={{ margin: 0, textWrap: 'pretty' }}>
+            Practice-based research exploring the convergence of digital technology, audio, visuals and text — with ongoing scholarship at the intersection of music technology, arts practice and human-computer interaction.
+          </p>
+          <p style={{ marginTop: 18, color: SITE.muted, textWrap: 'pretty' }}>
+            The work draws methodologies from electronic literature and game development into sonic art and electroacoustic composition. <em>Sounding Emerging Media</em> (Routledge, 2022) sets out this approach in book form, with further chapters and papers across Anthem Press, Bloomsbury and the IEEE proceedings of ICVARS.
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, marginTop: 28 }}>
+            <a href="publications.html" className="mono under" style={{ color: SITE.accent }}>All publications →</a>
+            <a href="https://orcid.org/0000-0002-6686-9345" className="mono under" style={{ color: SITE.accent }}>ORCiD profile →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---------- 3. PhD ----------
+function PhDBlock() {
+  return (
+    <section id="phd" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div className="works-card" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: 56, alignItems: 'start' }}>
+        <div className="ph-img" style={{ aspectRatio: '4/5', backgroundImage: 'url(https://clairefitch.github.io/images/WWNBS.jpg)' }} />
+        <div>
+          <div className="mono" style={{ color: SITE.accent, marginBottom: 14 }}>Doctoral Research</div>
+          <h3 className="display display-56" style={{ fontSize: 52, margin: 0, marginBottom: 22 }}>PhD · Queen{'\u2019'}s University Belfast.</h3>
+          <p style={{ margin: 0, fontSize: 19, textWrap: 'pretty' }}>
+            <em>The Unfolding of Sound: A Portfolio of Works.</em> Conferred in 2019. A practice-based approach to sonic art and electroacoustic composition, drawing methodologies from electronic literature and game development.
+          </p>
+          <p style={{ marginTop: 16, fontSize: 18, color: SITE.muted, textWrap: 'pretty' }}>
+            The research was later expanded into the monograph <em>Sounding Emerging Media</em> (Routledge, 2022).
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '28px 0 0', borderTop: `1px solid ${SITE.rule}` }}>
+            {[
+              ['Institution', 'Queen\u2019s University Belfast'],
+              ['Discipline',  'Music'],
+              ['Title',       'The Unfolding of Sound: A Portfolio of Works'],
+              ['Conferred',   '2019'],
+            ].map(([k, v], i) => (
+              <li key={i} style={{ padding: '12px 0', borderBottom: `1px solid ${SITE.rule}`, display: 'grid', gridTemplateColumns: '140px 1fr', gap: 16 }}>
+                <span className="mono" style={{ color: SITE.faint }}>{k}</span>
+                <span style={{ fontStyle: 'italic' }}>{v}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---------- Reusable: timeline-style list with year on left ----------
+function YearList({ rows, secondColLabel }) {
+  return (
+    <div>
+      <div className="ylist-head" style={{
+        display: 'grid', gridTemplateColumns: '110px 1fr 1.4fr', gap: 24,
+        padding: '10px 0', borderTop: `2px solid ${SITE.ink}`, borderBottom: `1px solid ${SITE.rule}`,
+        color: SITE.faint,
+      }}>
+        <div className="mono">Year</div>
+        <div className="mono">{secondColLabel || 'Institution'}</div>
+        <div className="mono">Role / Detail</div>
+      </div>
+      {rows.map((r, i) => (
+        <div key={i} className="ylist-row" style={{
+          display: 'grid', gridTemplateColumns: '110px 1fr 1.4fr', gap: 24,
+          padding: '14px 0', borderBottom: `1px solid ${SITE.rule}`, alignItems: 'baseline',
+        }}>
+          <span className="mono" style={{ color: SITE.muted }}>{r[0]}</span>
+          <span style={{ fontSize: 19, fontFamily: "'Lora', serif" }}>{r[1]}</span>
+          <span style={{ color: SITE.muted, textWrap: 'pretty' }}>{r[2]}</span>
+        </div>
+      ))}
+      <style>{`
+        @media (max-width: 880px) {
+          .ylist-head { display: none !important; }
+          .ylist-row { grid-template-columns: 1fr !important; gap: 4px !important; padding: 14px 0 !important; }
+          .ylist-row > .mono { font-size: 11px !important; color: ${SITE.faint} !important; }
+          .ylist-row > span:nth-child(2) { font-size: 18px !important; }
+        }
+      `}</style>
+    </div>
+  );
+}
+
+// ---------- 4. Teaching career ----------
+function TeachingCareer() {
+  const positions = [
+    ['2015–present', 'Dundalk Institute of Technology', 'Lecturer · Department of Creative Arts, Media and Music'],
+    ['2014–2025',    'Thinkspace Education',            'Tutor'],
+    ['2014–2016',    'Pulse College, Dublin',           'Lecturer · Music Production Faculty'],
+    ['2013–2016',    'Griffith College, Dublin',        'Lecturer · Computer Science Faculty'],
+    ['2012–2015',    'Cenit College, Naas',             'Lecturer · Game Design Faculty'],
+    ['2011–2016',    'Music Generation, Louth',         'Music Tutor · Panel member'],
+    ['1995–2012',    'RTÉ National Symphony Orchestra', 'Orchestral Tutti Cello'],
+  ];
+  return (
+    <section id="teaching" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
+        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Teaching career.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>Programme Director · MA/MSc in Music Technology</div>
+      </div>
+      <p style={{ fontSize: 19, maxWidth: 760, color: SITE.muted, textWrap: 'pretty', marginBottom: 36 }}>
+        Since 2015 a lecturer in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology. Programme Director for the MA/MSc in Music Technology since 2018. Earlier teaching across Pulse College, Griffith College, Cenit College and Music Generation Louth — and 17 years with the RTÉ National Symphony Orchestra before that.
+      </p>
+      <YearList rows={positions} secondColLabel="Institution" />
+    </section>
+  );
+}
+
+// ---------- 5. Qualifications & training ----------
+function Qualifications() {
+  const quals = [
+    ['2025', 'Advance HE',                            'Fellow (FHEA)'],
+    ['2019', 'Queen\u2019s University Belfast',       'PhD · Music'],
+    ['2011', 'Technological University Dublin',       'MMus · Improvisation · 2.1'],
+    ['1993', 'Royal Academy of Music, London',        'Certificate of Advanced Studies · Orchestral Studies'],
+    ['1991', 'Royal Birmingham Conservatoire',        'BA (Hons) Music Performance · 2.1'],
+    ['1990', 'Royal Birmingham Conservatoire',        'ABSM · Teaching · Distinction'],
+  ];
+  const training = [
+    ['2026',         'National Forum',  'Digital Badge in Universal Design for Teaching & Learning'],
+    ['2025–present', 'In progress',     'MA in Learning and Teaching'],
+    ['2022',         'Avid',            'Certified Instructor · Sibelius 101 & 110'],
+    ['2022',         'Epigeum',         'Professional Skills for Research Leaders'],
+    ['2021',         'Epigeum',         'Supervising Doctoral Studies'],
+    ['2021',         'Epigeum',         'Academic Integrity'],
+  ];
+  return (
+    <section id="education" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
+        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Qualifications.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>{quals.length} degrees & diplomas</div>
+      </div>
+      <YearList rows={quals} secondColLabel="Institution" />
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginTop: 72, marginBottom: 32 }}>
+        <h2 className="display display-72" style={{ fontSize: 48, margin: 0 }}>Continuing professional development.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>{training.length} programmes</div>
+      </div>
+      <YearList rows={training} secondColLabel="Provider" />
+    </section>
+  );
+}
+
+// ---------- 6. Leadership & service ----------
+function Leadership() {
+  const rows = [
+    ['2025–present', 'European Commission',                                    'European Innovation Council · Quality Check Expert'],
+    ['2024–2025',    'DkIT & DCU',                                              'Graduate Research School Board · Vice Chair'],
+    ['2023–2025',    'Shared Island Civic Fund',                                'Bid leadership · Shared Roots & Routes (Lifestyle Development Group, Drogheda; Rural Health Partnership, Armagh)'],
+    ['2023–2024',    'Dundalk Institute of Technology',                         'Programme development lead · BA (Hons) in Sound Design'],
+    ['2022–present', 'Lifestyle Development Group',                             'Board of Directors'],
+    ['2022',         'EU CERV 2022 (Citizens & Remembrance)',                   'Programme lead · consortium bid with DkIT, UCM, Equality Strategies Ltd.'],
+    ['2021–2026',    'Arts Council of Ireland',                                 'Peer Panel'],
+    ['2021',         'HEA North/South',                                         'Programme lead · consortium bid (DkIT, QUB, TCD, IADT)'],
+    ['2020–present', 'DkIT & DCU',                                              'Graduate Research School Board · Member'],
+    ['2020–present', 'Contemporary Music Centre',                               'Composer Representation'],
+    ['2019–2021',    'HEA Springboard+',                                        'Programme lead · Certificate in Sound Design and Implementation for Interactive Media'],
+    ['2018–present', 'Dundalk Institute of Technology',                         'Programme Director · MA/MSc in Music Technology'],
+    ['2015–2016',    'HEA Springboard',                                         'Programme lead · Diploma for Composing for Games'],
+  ];
+  return (
+    <section id="leadership" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
+        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Leadership &amp; service.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>{rows.length} appointments</div>
+      </div>
+      <p style={{ fontSize: 19, maxWidth: 760, color: SITE.muted, textWrap: 'pretty', marginBottom: 36 }}>
+        Programme leadership, board membership and peer review across European, national and institutional bodies — from the European Commission’s European Innovation Council to the Arts Council of Ireland and the Contemporary Music Centre.
+      </p>
+      <YearList rows={rows} secondColLabel="Body" />
+    </section>
+  );
+}
+
+// ---------- 7. Guest lectures ----------
+function GuestLectures() {
+  const rows = [
+    ['2024', 'Pulse College, Dublin',                  'Scoring for Games and Interactive Media · non-linear composition'],
+    ['2023', 'Pulse College, Dublin',                  'Scoring for Games and Interactive Media · non-linear composition'],
+    ['2022', 'Screen Composers Guild Ireland',         'FMOD Workshop'],
+    ['2022', 'Screen Composers Guild Ireland',         'Sibelius and Music for Media'],
+    ['2021', 'Film Scoring Academy of Europe',         'FMOD Master Class'],
+    ['2020', 'Ballyfermot College of Further Education', 'Composition for Games'],
+    ['2019', 'Technological University Dublin',        'Composition Seminar'],
+    ['2018', 'Thinkspace Education',                   'Music for Screen'],
+    ['2015', 'Pulse College, Galway',                  'Game Audio Design & Implementation'],
+    ['2015', 'Ballyfermot College of Further Education', 'Composition for Games'],
+    ['2014', 'Coder Dojo, Drogheda',                   'Voluntary Audio Mentor'],
+    ['2008', 'Trinity College Dublin',                 'Dare To Be Digital · Audio Mentor'],
+  ];
+  return (
+    <section id="lectures" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
+        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Invited lectures &amp; workshops.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>{rows.length} engagements</div>
+      </div>
+      <YearList rows={rows} secondColLabel="Host" />
+    </section>
+  );
+}
+
+// ---------- 8. Validation panels & external examination ----------
+function Panels() {
+  const rows = [
+    ['2025', 'Institute of Art and Design',          'Interview Panel · Assistant Lecturer in Sound'],
+    ['2025', 'Griffith College, Dublin',             'External Examiner · BA (Hons) Music Production; BA (Hons) Music Production with Composition'],
+    ['2025', 'Institute of Art and Design',          'Validation Panel · MA in Sound (ReSound)'],
+    ['2024', 'Dublin Business School',               'Validation Panel · BA (Hons) Audio Production; BA (Hons) Music Project Management'],
+    ['2023', 'Falmouth University',                  'Validation Panel · BA (Hons) Sound Design'],
+    ['2022', 'Pulse College, Dublin',                'Validation Panel · BA (Hons) Music Production and Composition'],
+    ['2022', 'Pulse College, Dublin',                'Validation Panel · Certificate in Music Production and Audio Technology'],
+    ['2008', 'Royal Irish Academy of Music',         'External Examiner · Cello and Bass'],
+  ];
+  return (
+    <section id="panels" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
+        <h2 className="display display-72" style={{ fontSize: 56, margin: 0 }}>Validation &amp; external examination.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>{rows.length} panels</div>
+      </div>
+      <YearList rows={rows} secondColLabel="Institution" />
+    </section>
+  );
+}
+
+// ---------- 9. Sibelius block ----------
+function SibeliusBlock() {
+  return (
+    <section id="sibelius" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div className="works-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: 56, alignItems: 'center' }}>
+        <div>
+          <div className="mono" style={{ color: SITE.accent, marginBottom: 14 }}>Certification · Avid</div>
+          <h3 className="display display-56" style={{ fontSize: 48, margin: 0, marginBottom: 18 }}>Avid Certified Instructor · Sibelius 101 &amp; 110.</h3>
+          <p style={{ margin: 0, fontSize: 19, color: SITE.ink, textWrap: 'pretty' }}>
+            Notation, engraving and contemporary score practice. Available for training, workshops and short-course delivery — including FMOD master classes for film and game composition.
+          </p>
+          <div style={{ marginTop: 26 }}>
+            <a href="contact.html#enquiry-speaking" className="mono under" style={{ color: SITE.accent }}>Enquire about training →</a>
+          </div>
+        </div>
+        <div style={{ aspectRatio: '16/10', background: SITE.dark, color: SITE.darkPaper, padding: '40px 36px', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at 30% 30%, rgba(217,118,87,0.25), transparent 60%)' }} />
+          <div style={{ position: 'relative' }}>
+            <div className="mono" style={{ color: SITE.darkFaint, marginBottom: 12 }}>Sibelius</div>
+            <div className="display" style={{ fontSize: 36, lineHeight: 1.05, color: SITE.darkPaper }}>Notation, engraving<br/>&amp; contemporary score practice.</div>
+            <div className="mono" style={{ color: SITE.darkMuted, marginTop: 24 }}>Avid Certified Instructor (ACI) · 2022</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ---------- 10. Conferences & festivals ----------
+function Conferences() {
+  const rows = [
+    ['2025', 'ICVARS',                              'Birmingham, UK',    'VR Exposure Therapy with 6DoF · Hanlon, Fitch, Morris'],
+    ['2022', 'Sonorities Festival',                 'Belfast',           'Tale Of A Great Sham(e)Text'],
+    ['2021', 'Electronic Literature Organisation',  'Bergen, Norway',    'Ear For The Surge'],
+    ['2020', 'Electronic Literature Organisation',  'Florida, US',       'SFBookDraft1 · with K. McErlean'],
+    ['2019', 'Electronic Literature Organisation',  'Cork, Ireland',     'Tale Of A Great Sham(e)Text'],
+    ['2019', 'Kylie: The Symposium',                'Maynooth',          'Can\u2019t Get You Out of My Web'],
+    ['2019', 'Music Current',                       'Smock Alley, Dublin', 'And The Birds Sang'],
+    ['2019', 'SPIKE Alternative Cello Festival',    'Dublin',            'Questioning The Elements'],
+    ['2019', 'First Fortnight',                     'New Theatre, Dublin', 'Raven and The Crone'],
+    ['2017', 'ISSTA',                               'DkIT',              'Murdering The Time'],
+    ['2014', 'HearSay Festival',                    'Ireland',           'Look (FFEBCD)'],
+    ['2013', 'Hilltown New Music Festival',         'Castlepollard',     'We Called It Dirt'],
+    ['2012', 'Hilltown New Music Festival',         'Castlepollard',     'pHone'],
+  ];
+  return (
+    <section id="conferences" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 32 }}>
+        <h2 className="display display-72" style={{ fontSize: 56, margin: 0 }}>Conferences &amp; festivals.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>{rows.length} engagements · selection</div>
+      </div>
+      <div className="confs-head" style={{
+        display: 'grid', gridTemplateColumns: '80px 1.4fr 1fr 1.4fr', gap: 20,
+        padding: '12px 0', borderTop: `2px solid ${SITE.ink}`, borderBottom: `1px solid ${SITE.rule}`,
+        color: SITE.faint,
+      }}>
+        <div className="mono">Year</div>
+        <div className="mono">Venue / Conference</div>
+        <div className="mono">Location</div>
+        <div className="mono">Work / Note</div>
+      </div>
+      {rows.map((c, i) => (
+        <div key={i} className="confs-row" style={{
+          display: 'grid', gridTemplateColumns: '80px 1.4fr 1fr 1.4fr', gap: 20,
+          padding: '14px 0', borderBottom: `1px solid ${SITE.rule}`, alignItems: 'baseline',
+        }}>
+          <span className="mono" style={{ color: SITE.muted }}>{c[0]}</span>
+          <span style={{ fontSize: 19, fontFamily: "'Lora', serif" }}>{c[1]}</span>
+          <span style={{ color: SITE.muted }}>{c[2]}</span>
+          <span style={{ color: SITE.muted, fontStyle: 'italic' }}>{c[3]}</span>
+        </div>
+      ))}
+    </section>
+  );
+}
+
+function App() {
+  return (
+    <div data-screen-label="Teaching & Research">
+      <SectionHero {...hero} current="teaching-research" />
+      <CredentialsStrip />
+      <ResearchStatement />
+      <PhDBlock />
+      <TeachingCareer />
+      <Qualifications />
+      <Leadership />
+      <GuestLectures />
+      <Panels />
+      <SibeliusBlock />
+      <Conferences />
+      <NextSection exclude="teaching-research" />
+      <SiteFooter />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>

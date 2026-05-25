@@ -1,438 +1,264 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Claire Fitch</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claire Fitch — Composer, sound artist, cellist, lecturer</title>
+<meta name="description" content="Sonic art, electronic literature, game scores, publications and production music — Claire Fitch FHEA." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div id="root"></div>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Sonic Art</a></li>
-							<li><a href="#two">Electronic Literature</a></li>
-							<li><a href="#three">Game Scores</a></li>
-							<li><a href="#four">Publications</a></li>
-							<li><a href="#five">Production Music & Sound Effects</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<script type="text/babel" src="site.jsx"></script>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Claire Fitch</h1>
-							<p>sonic art, electronic literature, game scores, publications, production music & sound effects. <br />
-					</p>
-							<!--<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul> -->
+<script type="text/babel">
+// Landing page — full-bleed featured hero + editorial section cards.
 
-							<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://mastodon.ie/@ambiencellist" class="fab fa-mastodon"><span class="label">Mastodon</span></a></li>
-												
-												<li><a href="https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+function HomeHero() {
+  return (
+    <section className="home-hero" style={{ position: 'relative', height: 760, overflow: 'hidden', background: SITE.dark, color: SITE.darkPaper }}>
+      <SiteNav mode="overlay" />
+      <div className="home-hero-bg" style={{
+        position: 'absolute', inset: 0,
+        background: 'url(https://clairefitch.github.io/images/BI-1.jpg) center/cover',
+        filter: 'brightness(0.6) contrast(1.05) saturate(0.92) sepia(0.18)',
+      }} />
+      <div className="home-hero-bg" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 60%, rgba(14,10,5,0.72) 100%)' }} />
+      <div className="h-padded home-hero-content" style={{ position: 'absolute', left: 56, bottom: 72, right: 56 }}>
+        <div className="tape tape-light" style={{ marginBottom: 28 }}>Featured · Sonic Art · 2021</div>
+        <h1 className="display hero-display" style={{ fontSize: 132, margin: 0, color: SITE.darkPaper }}>Claire&nbsp;Fitch</h1>
+        <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 56, marginTop: 36, alignItems: 'end' }}>
+          <p style={{ margin: 0, fontSize: 22, lineHeight: 1.45, maxWidth: 720, color: 'rgba(246,240,223,0.92)', textWrap: 'pretty' }}>
+            {BIO_SHORT}
+          </p>
+          <div className="now-playing" style={{ textAlign: 'right' }}>
+            <div className="mono" style={{ color: SITE.darkMuted, marginBottom: 8 }}>Now playing</div>
+            <div style={{ fontFamily: "'Lora', serif", fontSize: 24, fontStyle: 'italic' }}>Becoming Imperceptible</div>
+            <div className="mono" style={{ color: SITE.darkMuted, marginTop: 4 }}>thirtythree-45 · Droichead Arts</div>
+            <PlayBar />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-												<li><a href="https://clairefitch.wordpress.com/" class="icon brands fa-wordpress"><span class="label">WordPress</span></a></li>
+function PlayBar() {
+  return (
+    <div className="playbar" style={{ display: 'flex', alignItems: 'center', gap: 14, marginTop: 18, justifyContent: 'flex-end' }}>
+      <a href="https://thirtythree-45.com/where-are-we-now-episode-1/" aria-label="Play featured work" style={{
+        width: 44, height: 44, borderRadius: '50%', border: `1px solid ${SITE.darkFaint}`,
+        background: 'rgba(246,240,223,0.08)', color: SITE.darkPaper, display: 'flex',
+        alignItems: 'center', justifyContent: 'center', textDecoration: 'none', flex: '0 0 auto',
+      }}>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor"><polygon points="2,1 13,7 2,13" /></svg>
+      </a>
+      <div className="playbar-track" style={{ flex: '0 0 240px', height: 2, background: 'rgba(246,240,223,0.25)', position: 'relative' }}>
+        <div style={{ position: 'absolute', left: 0, top: 0, height: '100%', width: '38%', background: SITE.darkPaper }} />
+      </div>
+      <span className="mono" style={{ color: SITE.darkMuted, flex: '0 0 auto' }}>02:14 / 05:48</span>
+    </div>
+  );
+}
 
-												<li><a href="https://soundcloud.com/ambiencellist" class="icon brands fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+function AboutBlock() {
+  return (
+    <section id="about-intro" style={{ padding: '96px 56px', borderBottom: `1px solid ${SITE.rule}` }}>
+      <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 64, alignItems: 'start' }}>
+        <div>
+          <div className="mono" style={{ color: SITE.accent, marginBottom: 16 }}>About</div>
+          <h2 className="display display-72" style={{ fontSize: 56, margin: 0 }}>
+            A practice<br/>between cello<br/>and code.
+          </h2>
+        </div>
+        <div style={{ fontSize: 20, lineHeight: 1.55 }}>
+          <p style={{ margin: 0, textWrap: 'pretty' }}>{BIO_LONG[1]}</p>
+          <p style={{ marginTop: 18, color: SITE.muted, textWrap: 'pretty' }}>{BIO_LONG[2]}</p>
+          <div className="about-stats" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 40, borderTop: `1px solid ${SITE.rule}`, paddingTop: 24 }}>
+            <Stat label="PhD"      value="QUB · SARC, 2019" />
+            <Stat label="Book"     value="Routledge, 2022" />
+            <Stat label="Teaching" value="DkIT, since 2015" />
+            <Stat label="RTÉ NSO"  value="Cello · 1995–2012" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-												<li><a href="https://ambiencellist.itch.io/" class="cib-itch-io"><span class="label">Itch.io</span></a></li>
+function Stat({ label, value }) {
+  return (
+    <div>
+      <div className="mono" style={{ color: SITE.faint, marginBottom: 6 }}>{label}</div>
+      <div style={{ fontStyle: 'italic' }}>{value}</div>
+    </div>
+  );
+}
 
-												<li><a href="https://clairefitch.bandcamp.com/" class="fa fa-bandcamp"><span class="label">Bandcamp</span></a></li>
-												
-										        <li><a href="https://orcid.org/0000-0002-6686-9345" class="fab fa-orcid"> <span class="label">ORCiD</span></a></li>
-												
-												<li><a href="https://www.linkedin.com/in/fitchclaire/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
+function WorkCard({ tag, title, blurb, img, ratio, items, href }) {
+  return (
+    <div className="card works-card" style={{ padding: 0, display: 'grid', gridTemplateColumns: '1.1fr 1fr', overflow: 'hidden' }}>
+      <a href={href} className="ph-img" style={{
+        aspectRatio: ratio || '4/5', backgroundImage: `url(${img})`,
+        display: 'block', minHeight: 320,
+      }} />
+      <div style={{ padding: '40px 40px 32px', display: 'flex', flexDirection: 'column' }}>
+        <div className="mono" style={{ color: SITE.accent, marginBottom: 14 }}>{tag}</div>
+        <h3 className="display display-56" style={{ fontSize: 42, margin: 0, marginBottom: 14 }}>
+          <a href={href}>{title}</a>
+        </h3>
+        <p style={{ color: SITE.muted, margin: 0, fontSize: 17, textWrap: 'pretty' }}>{blurb}</p>
+        <ul style={{ listStyle: 'none', padding: 0, margin: '24px 0 0', flex: 1 }}>
+          {items.map((it, i) => (
+            <li key={i} style={{ display: 'grid', gridTemplateColumns: '54px 1fr', gap: 12, padding: '10px 0', borderTop: `1px solid ${SITE.rule}`, alignItems: 'baseline' }}>
+              <span className="mono" style={{ color: SITE.faint }}>{it.year}</span>
+              <span>
+                <a href={it.href} className="under">{it.title}</a>
+                <div style={{ color: SITE.muted, fontSize: 14, fontStyle: 'italic', marginTop: 2 }}>{it.venue}</div>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <a href={href} className="mono" style={{ marginTop: 18, color: SITE.accent }}>Explore {title.toLowerCase()} →</a>
+      </div>
+    </div>
+  );
+}
 
-						</div>
-					</section>
+function Works() {
+  return (
+    <section id="works" style={{ padding: '88px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 40, flexWrap: 'wrap', gap: 12 }}>
+        <h2 className="display display-72" style={{ fontSize: 72, margin: 0 }}>Selected works.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>Six domains · 1995–present</div>
+      </div>
 
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/BI-1.jpg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sonic Art</h2>
-									<p> The journey spans Birmingham, London, Dublin and Belfast.</p>
-									<ul class="actions">
-										<li><a href="sonicart.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/WWNBS.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Electronic Literature</h2>
-									<p>Conferences such as Electronic Literature Organisation in Cork, Ireland (2019); Florida, US (2020); and Bergen, Norway (2021).</p>
-									<ul class="actions">
-										<li><a href="electronicliterature.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/ATBS-sq.jpg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Game Scores</h2>
-									<p>Performances have taken place in Music Current, Dublin (2019); SPIKE Alternative Cello Festival, Dublin (2019); and Sonorities Festival, Belfast (2022).</p>
-									<ul class="actions">
-										<li><a href="gamescores.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/PS.jpg" alt="" data-position="15% 15%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Publications</h2>
-									<p>Publications include augmented reality, (RE)VERB #1 (2022); web, COVID Exhibition, ELO (2021); and printed media, Routledge (2022).</p>
-									<ul class="actions">
-										<li><a href="publications.html" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					
-					<section>
-						<a href="#" class="image"><img src="images/DepositPhotos.png" alt="" data-position="15% 15%" /></a>
-						<div class="content">
-							<div class="inner">
-								<h2>Production Music</h2>
-								<p>Production Music is available from FilmPac, Pond5, Deposit Photos, Audiosparx, Motion Elements, Infinity Music Library, and Magnatune</p>
-								<ul class="actions">
-									<li><a href="productionmusic.html" class="button">Learn more</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-				</section>
-					
-				<!-- One point 1 -->
-				<section id="onepointone" class="wrapper style3 fade-up">
-					<div class="inner">
-						<h2>Sonic Art</h2>
-						
-						<div class="features">
-							<section>
-							<!--	<span class="icon solid major fa-code"></span> -->
-								<h3>Becoming Imperceptible</h3>
-								<p>Commissioned by thirtythree-45 and Droichead Arts, for the podcast "Where are we now?". Curated by Brian Hegarty 2021, Drogheda, Ireland.</p>
-								<p><a href="https://thirtythree-45.com/where-are-we-now-episode-1/">Learn more</a></p>
-								<p></p>
-							</section>
-							<section>
-							<!--	<span class="icon solid major fa-lock"></span> -->
-								<h3>Murdering The Time</h3>
-								<p>Voice: Raven, Text: Claire Fitch and inspired by Chapter 7, Lewis Carroll's Alice in Wonderland. </p>
-								<p>Guessed the riddle yet? Haven't the slightest idea. Better with the time.  Broadcast on The Blue of The Night, RTÉ Lyric FM 2020.</p>
-								<p><a href="https://soundcloud.com/clairefitch/murdering-the-time">Listen</a></p>
-							</section>
-							<section>
-							<!--	<span class="icon solid major fa-cog"></span> -->
-								<h3>Written in his Voice</h3>
-								<p>Voice: Victor Daniels. A creative response, inspired by listening to him describing his experiences during World War II. Performed at the Sonic Lab QUB 2015, Belfast, Northern Ireland. </p>
-								<p><a href="https://youtu.be/ztqgyphYG6s">Listen</a></p>
-							</section>
-							<section>
-							<!--	<span class="icon solid major fa-desktop"></span> -->
-								<h3>Mrs Matchwell</h3>
-								<p>Voice: Martina Murray. Text: Sheriden Le Fanu, The House by the Churchyard. Mrs Matchwell, well matched. "She has the Honor to acquaint them that she transacts all Business relative to Courtship and Marriage, with the utmost Dispatch and Punctuality."  Performed at Scribbledehobble, Kaleidoscope 2020, Dublin, Ireland. </p>
-								<p><a href="https://www.youtube.com/watch?v=f_pzH9EKRLU">Listen</a></p>
-							</section>
-							
-							
-						</div>
-										<h3>Social</h3>
-										<ul class="icons">
-											<li><a href="https://mastodon.ie/@ambiencellist" class="fab fa-mastodon"><span class="label">Mastodon</span></a></li>
-											
-											<li><a href="https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+        <WorkCard
+          tag="01 · Sonic Art" title="Sonic Art"
+          href="sonic-art.html"
+          blurb="Practice-based works exploring voice, text and field — commissioned and broadcast across Ireland and the UK."
+          img="https://clairefitch.github.io/images/BI-1.jpg"
+          items={[
+            { year: '2021', title: 'Becoming Imperceptible', venue: 'thirtythree-45 · Droichead Arts', href: 'sonic-art.html#becoming-imperceptible' },
+            { year: '2020', title: 'Murdering The Time',     venue: 'The Blue of The Night, RTÉ Lyric FM', href: 'sonic-art.html#murdering-the-time' },
+            { year: '2020', title: 'Mrs Matchwell',           venue: 'Scribbledehobble, MoLI, Dublin', href: 'sonic-art.html#mrs-matchwell' },
+            { year: '2015', title: 'Written in his Voice',    venue: 'Sonic Lab, QUB, Belfast', href: 'sonic-art.html#written-in-his-voice' },
+          ]}
+        />
+        <WorkCard
+          tag="02 · Electronic Literature" title="Electronic Literature"
+          href="electronic-literature.html"
+          blurb="Transmedia works combining sound, text and image. Presented at ELO Cork (2019), Florida (2020) and Bergen (2021)."
+          img="https://clairefitch.github.io/images/WWNBS.jpg"
+          items={[
+            { year: '2014', title: 'Look (FFEBCD)',     venue: 'HearSay Festival, Ireland',         href: 'electronic-literature.html#look' },
+            { year: '2020', title: 'We Called It Dirt', venue: 'with Michael J. Maguire',           href: 'electronic-literature.html#we-called-it-dirt' },
+            { year: '2021', title: 'Ear For The Surge', venue: 'ELO Covid E-Lit Exhibition, Bergen', href: 'electronic-literature.html#ear-for-the-surge' },
+            { year: '2020', title: 'SFBookDraft1',      venue: 'with Kelly McErlean · ELO Florida', href: 'electronic-literature.html#sfbookdraft1' },
+          ]}
+        />
+        <WorkCard
+          tag="03 · Game Scores" title="Game Scores"
+          href="game-scores.html"
+          blurb="Interactive scores treating gameplay as performance — page-turning, branching, mapping."
+          img="https://clairefitch.github.io/images/ATBS-sq.jpg"
+          items={[
+            { year: '2019', title: 'And The Birds Sang',         venue: 'Music Current, Dublin',                href: 'game-scores.html#atbs' },
+            { year: '2019', title: 'Questioning The Elements',   venue: 'SPIKE Alternative Cello Festival',     href: 'game-scores.html#qte' },
+            { year: '2022', title: 'Tale Of A Great Sham(e)Text', venue: 'Sonorities Festival, Belfast',         href: 'game-scores.html#tgs' },
+            { year: '2020', title: 'We Called It Dirt',          venue: 'gamescore version',                    href: 'game-scores.html#wcid' },
+          ]}
+        />
+        <WorkCard
+          tag="04 · Publications" title="Publications"
+          href="publications.html"
+          blurb="Across augmented reality, web and print: (RE)VERB #1 (2022), ELO COVID Exhibition (2021), and a Routledge monograph (2022)."
+          img="https://clairefitch.github.io/images/SEM-CF.png"
+          items={[
+            { year: '2022', title: 'Sounding Emerging Media',           venue: 'Routledge — monograph',                  href: 'publications.html#sounding-emerging-media' },
+            { year: '2022', title: 'Vanguard Voices',                   venue: '(RE)VERB #1 · with McErlean, Murray',    href: 'publications.html#vanguard-voices' },
+            { year: '2021', title: 'Folding, Unfolding, Refolding Sound', venue: 'Digital Art in Ireland · Anthem Press', href: 'publications.html#folding-unfolding' },
+            { year: '2020', title: 'Becoming Imperceptible',            venue: 'Where Are We Now? #1, thirtythree-45',   href: 'publications.html#becoming-imperceptible-pub' },
+          ]}
+        />
+        <WorkCard
+          tag="05 · Production Music & SFX" title="Production Music & SFX"
+          href="production-music.html"
+          blurb="Over twenty years of catalogue music and sound effects for television, film, games and podcasts."
+          img="https://clairefitch.github.io/images/DepositPhotos.png"
+          items={[
+            { year: '2023', title: 'Another Day',           venue: 'Magnatune · Album',                  href: 'production-music.html#another-day' },
+            { year: '2009', title: 'Celocity',              venue: 'Magnatune · Album',                  href: 'production-music.html#celocity' },
+            { year: '2005', title: 'Ambiencellist Part II', venue: 'Magnatune · Album',                  href: 'production-music.html#ambiencellist-2' },
+            { year: '—',    title: 'Stock libraries',       venue: 'FilmPac · Pond5 · Deposit Photos',   href: 'production-music.html#stock' },
+          ]}
+        />
+        <WorkCard
+          tag="06 · Teaching & Research" title="Teaching & Research"
+          href="teaching-research.html"
+          blurb="Lecturer at Dundalk Institute of Technology since 2015. FHEA, Avid ACI Instructor for Sibelius, and PhD from Queen’s University Belfast’s Sonic Arts Research Centre."
+          img="https://clairefitch.github.io/images/PS.jpg"
+          items={[
+            { year: '2019', title: 'PhD · Sonic Arts Research Centre',  venue: 'QUB · supervised by Prof. Michael Alcorn', href: 'teaching-research.html#phd' },
+            { year: '2015', title: 'Lecturer · DkIT',                   venue: 'Creative Arts, Media and Music',          href: 'teaching-research.html#teaching' },
+            { year: '—',    title: 'Avid ACI Instructor · Sibelius',    venue: 'Notation, engraving, score practice',     href: 'teaching-research.html#sibelius' },
+            { year: '—',    title: 'Conferences & festivals',          venue: 'ELO · ISSTA · Sonorities · Music Current', href: 'teaching-research.html#conferences' },
+          ]}
+        />
+      </div>
+    </section>
+  );
+}
 
-											<li><a href="https://clairefitch.wordpress.com/" class="icon brands fa-wordpress"><span class="label">WordPress</span></a></li>
+function ContactCTA() {
+  return (
+    <section style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
+      <div className="cta-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 56, alignItems: 'end' }}>
+        <div>
+          <div className="mono" style={{ color: SITE.accent, marginBottom: 16 }}>Get in touch</div>
+          <h2 className="display display-72" style={{ fontSize: 84, margin: 0, textWrap: 'balance' }}>
+            Commission, collaborate, license.
+          </h2>
+          <p style={{ marginTop: 22, color: SITE.muted, fontSize: 19, maxWidth: 620, textWrap: 'pretty' }}>
+            Bespoke composition, sound design, academic collaboration, Sibelius training, or licensing from the back catalogue — the contact form will get you a reply within a week.
+          </p>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 14, alignItems: 'flex-start' }}>
+          <a href="contact.html" className="mono" style={{
+            background: SITE.ink, color: SITE.paper, padding: '18px 28px',
+            letterSpacing: '0.22em', display: 'inline-block',
+          }}>Open contact form →</a>
+          <a href="contact.html#enquiry-licensing" className="under mono" style={{ color: SITE.ink, paddingTop: 8 }}>
+            Licensing & catalogue enquiries →
+          </a>
+        </div>
+      </div>
+      <style>{`@media (max-width: 880px) { .cta-grid { grid-template-columns: 1fr !important; } }`}</style>
+    </section>
+  );
+}
 
-											<li><a href="https://soundcloud.com/ambiencellist" class="icon brands fa-soundcloud"><span class="label">SoundCloud</span></a></li>
+function App() {
+  return (
+    <div data-screen-label="Home">
+      <HomeHero />
+      <AboutBlock />
+      <Works />
+      <ContactCTA />
+      <SiteFooter />
+    </div>
+  );
+}
 
-											<li><a href="https://ambiencellist.itch.io/" class="cib-itch-io"><span class="label">Itch.io</span></a></li>
-
-											<li><a href="https://clairefitch.bandcamp.com/" class="fa fa-bandcamp"><span class="label">Bandcamp</span></a></li>
-
-											<li><a href="https://orcid.org/0000-0002-6686-9345" class="fab fa-orcid"> <span class="label">ORCiD</span></a></li>
-											
-											<li><a href="https://www.linkedin.com/in/fitchclaire/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										</ul>
-									</li>
-								</ul>
-							</section>
-
-				<!-- Two -->
-					<section id="two" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Electronic Literature</h2>
-							
-							<div class="features">
-								<section>
-								<!--	<span class="icon solid major fa-code"></span> -->
-									<h3>Look (FFEBCD)</h3>
-									<p>Look (FFEBCD) is available as a <a href="https://clairefitch.github.io/Look/Look.html">gamescore</a>, on <a href="https://soundcloud.com/look-ffebcd">SoundCloud</a>, 
-									<a href="https://twitter.com/LookFFEBCD">Twitter</a>, <a href="https://www.youtube.com/channel/UCAb-0qIbQdQNGGarw_QQthg">YouTube</a>, 
-									and on <a href="https://lookffebcd.wordpress.com/">WordPress</a>. Presented at HearSay 2014, Ireland.</p>
-								</section>
-
-								<section>
-								<!--	<span class="icon solid major fa-lock"></span> -->
-									<h3>We Called It Dirt</h3>
-									<p>Using samples from John Patrick McNamara <a href="https://michaeljmaguire.com/">(Micheal J.Maguire)</a>, We Called It Dirt is on <a href="https://soundcloud.com/wecalleditdirt">SoundCloud</a>, <a href="https://lookffebcd.wordpress.com/">WordPress</a>, 
-									<a href="https://www.youtube.com/channel/UCblol_2cphdx6W3nH8bsRQQ">YouTube</a>, and as a <a href="WCID/wecalleditdirt.html">gamescore</a>.</p>
-								</section>
-								<section>
-
-								<!--	<span class="icon solid major fa-cog"></span> -->
-									<h3>Ear For The Surge</h3>
-									<p>Selected for the Electronic Literature Covid E-Lit <a href="https://www.eliterature.org/elo2021/covid/">Exhibition</a>, Ear For The Surge is also on <a href="https://www.youtube.com/channel/UCuDaPs-pz1M6ARoTz6_1awA/videos">YouTube</a>, 
-									<a href="https://earforthesurge.wordpress.com/">Wordpress</a>, <a href="https://twitter.com/EarSurge">Twitter</a>, 
-									and <a href="https://soundcloud.com/earforthesurge">SoundCloud</a>. Presented at Electronic Literature Organisation conference 2021, Bergen, Norway.</p>
-								</section>
-
-								<section>
-								<!--	<span class="icon solid major fa-desktop"></span> -->
-									<h3>SFBookDraft1</h3>
-									<p>SFBookDraft1 is a collaboration between Claire Fitch and <a href="https://twitter.com/lasvegas_film">Kelly McErlean</a>. It's available on <a href="https://twitter.com/Draft1Sf">Twitter</a>, 
-									<a href="https://www.youtube.com/channel/UCM0E-SfrrR90xrJZzpUwTWg">YouTube</a>, <a href="https://soundcloud.com/sfbookdraft1">SoundCloud</a>, and on <a href="https://sfbookdraft1.wordpress.com/">WordPress</a>. Presented at Electronic Literature Organisation Conference 2020, Florida, US.</p>
-								</section>
-								
-								
-							</div>
-							<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://mastodon.ie/@ambiencellist" class="fab fa-mastodon"><span class="label">Mastodon</span></a></li>
-												
-												<li><a href="https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-
-												<li><a href="https://clairefitch.wordpress.com/" class="icon brands fa-wordpress"><span class="label">WordPress</span></a></li>
-
-												<li><a href="https://soundcloud.com/ambiencellist" class="icon brands fa-soundcloud"><span class="label">SoundCloud</span></a></li>
-
-												<li><a href="https://ambiencellist.itch.io/" class="cib-itch-io"><span class="label">Itch.io</span></a></li>
-
-												<li><a href="https://clairefitch.bandcamp.com/" class="fa fa-bandcamp"><span class="label">Bandcamp</span></a></li>
-
-												<li><a href="https://orcid.org/0000-0002-6686-9345" class="fab fa-orcid"><span class="label">ORCiD</span></a></li>
-												
-												<li><a href="https://www.linkedin.com/in/fitchclaire/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-						</div>
-					</section>
-
-				<!-- Three -->
-					<section id="three" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Game Scores</h2>
-							
-							<div class="features">
-								<section>
-								<!--	<span class="icon solid major fa-code"></span> -->
-									<h3>And The Birds Sang</h3>
-									<p><a href="https://clairefitch.github.io/ATBS/atbs.html">And The Birds Sang </a>game score link. Performed at Music Current 2019, Dublin, Ireland.</p>
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-lock"></span> -->
-									<h3>We Called It Dirt</h3>
-									<p><a href="WCID/wecalleditdirt.html">We Called It Dirt </a> game score link.</p>
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-cog"></span> -->
-									<h3>Questioning The Elements</h3>
-									<p><a href="https://clairefitch.github.io/QTE/QuestioningTheElements.html">Questioning The Elements </a> game score link. Performed at SPIKE Alternative Cello Festival 2019, Dublin, Ireland.</p>
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-desktop"></span> -->
-									<h3>Tale Of A Great Sham(e)Text</h3>
-									<p><a href="https://clairefitch.github.io/TGS/TGS.html">Tale Of A Great Sham(e)Text </a> game score link. Performed at Sonorities Festival 2022, Belfast, Northern Ireland.</p>
-								</section>
-								
-								
-							</div>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://mastodon.ie/@ambiencellist" class="fab fa-mastodon"><span class="label">Mastodon</span></a></li>
-												
-												<li><a href="https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-
-												<li><a href="https://clairefitch.wordpress.com/" class="icon brands fa-wordpress"><span class="label">WordPress</span></a></li>
-
-												<li><a href="https://soundcloud.com/ambiencellist" class="icon brands fa-soundcloud"><span class="label">SoundCloud</span></a></li>
-
-												<li><a href="https://ambiencellist.itch.io/" class="cib-itch-io"><span class="label">Itch.io</span></a></li>
-
-												<li><a href="https://clairefitch.bandcamp.com/" class="fa fa-bandcamp"><span class="label">Bandcamp</span></a></li>
-
-												<li><a href="https://orcid.org/0000-0002-6686-9345" class="fab fa-orcid"><span class="label">ORCiD</span></a></li>
-												
-												<li><a href="https://www.linkedin.com/in/fitchclaire/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-							</section>
-
-								<!-- Four -->
-					<section id="four" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Publications</h2>
-							<p>Publications include augmented reality, (RE)VERB #1 (2022); web, COVID Exhibition, ELO (2021); and printed media, Routledge (2022).</p>
-							<div class="features">
-								<section>
-								<!--	<span class="icon solid major fa-code"></span> -->
-									<h3>Sounding Emerging Media</h3>
-									<p>Details a practice-based approach to sonic art and electroacoustic composition, drawing on methodologies inspired by the production of electronic literature, and game development. </p>
-									<p>Purchase from <a href="https://www.routledge.com/Sounding-Emerging-Media/Fitch/p/book/9780367495480">Routledge</a> or <a href="https://www.amazon.co.uk/Sounding-Emerging-Media-Claire-Fitch/dp/0367495481/">Amazon</a>.</p>
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-lock"></span> -->
-									<h3>Vanguard Voices</h3>
-									<p>A collaboration with Kelly McErlean and Martina Murray, Vanguard Voices is an augmented reality 'walking web', published in (RE)VERB #1 <a href="https://www.gesso.app/reverb-issue-1">Issue #1</a>. Investigating locations around Dublin where Anna Parnell, Maud Gonne and Jennie Wyse-Power worked for the Ladies Land League, Inghínídhe na hÉireann and Cumann na mBan.</p>
-									<p><a href="https://gesso.fm/collections/vanguard-voices1">Learn more</a></p>
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-cog"></span> -->
-									<h3>Folding, Unfolding, Refolding Sound </h3>
-									<p>Book chapter in "Digital Art in Ireland: New Media and Irish Artistic Practice" (ed) James O'Sullivan. Anthem Press, 2021.</p>
-									<p><a href="https://anthempress.com/digital-art-in-ireland-pdf">Learn more</a></p>
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-desktop"></span> -->
-									<h3>Becoming Imperceptible</h3>
-									<p>Podcast episode in "Where Are We Now? #1" (ed) Brian Hegarty, thirtythree-45, Droichead Arts, 2020.</p>
-									<p><a href="https://thirtythree-45.com/where-are-we-now-episode-1/">Learn more</a> </p>
-								</section>
-								
-									</div>
-									<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://mastodon.ie/@ambiencellist" class="fab fa-mastodon"><span class="label">Mastodon</span></a></li>
-												
-												<li><a href="https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-
-												<li><a href="https://clairefitch.wordpress.com/" class="icon brands fa-wordpress"><span class="label">WordPress</span></a></li>
-
-												<li><a href="https://soundcloud.com/ambiencellist" class="icon brands fa-soundcloud"><span class="label">SoundCloud</span></a></li>
-
-												<li><a href="https://ambiencellist.itch.io/" class="cib-itch-io"><span class="label">Itch.io</span></a></li>
-
-												<li><a href="https://clairefitch.bandcamp.com/" class="fa fa-bandcamp"><span class="label">Bandcamp</span></a></li>
-
-												<li><a href="https://orcid.org/0000-0002-6686-9345" class="fab fa-orcid"><span class="label">ORCiD</span></a></li>
-												
-												<li><a href="https://www.linkedin.com/in/fitchclaire/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-							
-						</div>
-					</section>
-
-                                        <!-- Five -->
-					<section id="five" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>Production Music and Sound Effects</h2>
-							<p>Tracks are available at Magnatune, FilmPac, Infinity Music Library, Motion Elements, Deposit Photos, Music Grid, Melodicloud, and Pond5. Please contact me if you need any specific music and sound effects. I have over 20 years experience of creating music and sound effects for television, film, games, and podcasts. </p>
-							<div class="features">
-								<section>
-								<!--	<span class="icon solid major fa-cog"></span> -->
-									<h3>Magnatune</h3>
-									<p>License the Ambiencellist (2003), Ambiencellist Part II (2005), Celocity (2009), and Another Day (2023) albums direct from <a href="http://magnatune.com/artists/fitch/">Magnatune</a>. </p>
-									
-								</section>
-								<section>
-								<!--	<span class="icon solid major fa-code"></span> -->
-									<h3>Stock Libraries</h3>
-									<p>I have a selection of stock music tracks and sound FX that are available for royalty free license. </p>
-									<p>Feel free to visit <a href="https://filmpac.com/music/artists/A00213/ambiencellist/">FilmPac</a>, <a href="https://www.pond5.com/artist/ambiencellist">Pond5</a>, <a href="https://depositphotos.com/portfolio-79469066.html">Deposit Photos</a>, <a href="https://www.musicgrid.com/listing?artist=1689">Music Grid</a>, <a href="https://www.melodicloud.com/artist/ambiencellist/">Melodicloud</a>, or <a href="https://www.motionelements.com/contributors/ambiencellist">Motion Elements</a>. </p>
-								</section>
-								
-								
-								<section>
-								<!--	<span class="icon solid major fa-desktop"></span> -->
-									<h3></h3>
-									<p></p>
-									<p> </p>
-								</section>
-								
-									</div>
-							
-									<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://mastodon.ie/@ambiencellist" class="fab fa-mastodon"><span class="label">Mastodon</span></a></li>
-												
-												<li><a href="https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-
-												<li><a href="https://clairefitch.wordpress.com/" class="icon brands fa-wordpress"><span class="label">WordPress</span></a></li>
-
-												<li><a href="https://soundcloud.com/ambiencellist" class="icon brands fa-soundcloud"><span class="label">SoundCloud</span></a></li>
-
-												<li><a href="https://ambiencellist.itch.io/" class="cib-itch-io"><span class="label">Itch.io</span></a></li>
-
-												<li><a href="https://clairefitch.bandcamp.com/" class="fa fa-bandcamp"><span class="label">Bandcamp</span></a></li>
-
-												<li><a href="https://orcid.org/0000-0002-6686-9345" class="fab fa-orcid"><span class="label">ORCiD</span></a></li>
-												
-												<li><a href="https://www.linkedin.com/in/fitchclaire/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-							</div>
-					</section>
-</div>
-	
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Claire Fitch. All rights reserved.</li><li></a></li>
-					</ul>
-				</div>
-			</footer>
-
-		<!-- Scripts -->
-		<link rel="stylesheet" href="https://unpkg.com/@coreui/icons/css/brand.min.css">
-		<script src="https://kit.fontawesome.com/77fafba65a.js" crossorigin="anonymous"></script>
-
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/css/brand.min.css"></script>
-
-	</body>
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
 </html>
