@@ -18,23 +18,24 @@
 <script type="text/babel" src="site.jsx"></script>
 
 <script type="text/babel">
-// Contact form — submits via standard HTML POST to Formsubmit.co.
+// Contact form — submits via standard HTML POST to Web3Forms.
 // =====================================================================
-// FORMSUBMIT SETUP NOTE FOR CLAIRE:
-// The first time anyone submits this form, Formsubmit will email you
-// a confirmation link at fitch.claire@gmail.com. Click it once — after
-// that, every submission is delivered straight to your inbox and the
-// thanks.html page is shown to the visitor on success.
+// WEB3FORMS SETUP NOTE FOR CLAIRE:
+// Web3Forms delivers submissions to the email you registered on
+// web3forms.com (fitch.claire@gmail.com) using the access key below.
+// No activation step needed — submissions arrive immediately.
 //
-// For email obfuscation, log in at https://formsubmit.co after first
-// activation and copy the hashed endpoint URL. Then replace the
-// FORMSUBMIT_ACTION constant below with your hash URL.
+// The access key is safe to expose in client-side source; it only
+// authorises submissions to be sent to YOUR registered email, and
+// can't be used to read or steal anything. If you ever want to rotate
+// it, log into web3forms.com and replace WEB3FORMS_KEY below.
 //
-// THANKS_URL must be the absolute URL of the thanks page on your
-// production domain — Formsubmit only accepts absolute URLs for _next.
+// REDIRECT_URL must be the absolute URL of the thanks page on your
+// production domain — Web3Forms requires an absolute URL.
 // =====================================================================
-const FORMSUBMIT_ACTION = 'https://formsubmit.co/fitch.claire@gmail.com';
-const THANKS_URL = 'https://clairefitch.github.io/thanks.html';
+const WEB3FORMS_ACTION = 'https://api.web3forms.com/submit';
+const WEB3FORMS_KEY    = '201d3e0e-574e-4cf3-a89c-5a1d241a3953';
+const REDIRECT_URL     = 'https://clairefitch.github.io/thanks.html';
 
 const ENQUIRY_TYPES = [
   { id: 'commission', label: 'Commission',    note: 'New work, bespoke composition or sound design' },
@@ -88,14 +89,14 @@ function ContactForm() {
   return (
     <section style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
       <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr', gap: 64, alignItems: 'start' }}>
-        <form action={FORMSUBMIT_ACTION} method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
-          {/* Formsubmit configuration (hidden) */}
-          <input type="hidden" name="_subject" value={`[${enquiryLabel}] Website enquiry — Claire Fitch`} />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_next" value={THANKS_URL} />
-          {/* Honeypot — bots fill, humans don't see */}
-          <input type="text" name="_honey" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
+        <form action={WEB3FORMS_ACTION} method="POST" style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+          {/* Web3Forms configuration (hidden) */}
+          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+          <input type="hidden" name="subject" value={`[${enquiryLabel}] Website enquiry — Claire Fitch`} />
+          <input type="hidden" name="from_name" value="Claire Fitch website" />
+          <input type="hidden" name="redirect" value={REDIRECT_URL} />
+          {/* Honeypot — Web3Forms ignores submissions where this is checked */}
+          <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
 
           <div id="enquiry">
             <div className="mono" style={{ color: SITE.accent, marginBottom: 18 }}>What is this regarding?</div>
@@ -214,7 +215,7 @@ function FAQ() {
     ['What about licensing existing music?', 'Albums (Ambiencellist, Ambiencellist Part II, Celocity, Another Day) license directly from Magnatune. Royalty-free tracks are available across FilmPac, Pond5, Deposit Photos, MotionElements and others.'],
     ['Are you available for academic supervision or collaboration?', 'Yes — practice-based research at the intersection of music technology, arts practice and human-computer interaction is the core area. Use the Academic enquiry type.'],
     ['Do you offer Sibelius training?', 'Yes — Avid Certified Instructor (ACI) for Sibelius 101 and 110. Workshops, short courses and one-to-one training all possible. Use the Speaking enquiry type.'],
-    ['Where does my message go?', 'Straight to Claire’s personal inbox via a delivery service (Formsubmit). No mailing list, no third-party storage, no marketing.'],
+    ['Where does my message go?', 'Straight to Claire’s personal inbox via a delivery service (Web3Forms). No mailing list, no third-party storage, no marketing.'],
   ];
   return (
     <section style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}`, background: SITE.card }}>
