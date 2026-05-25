@@ -129,7 +129,7 @@ const NAV = [
 ];
 
 const SOCIAL = [
-  ['Mastodon',   'https://mastodon.ie/@ambiencellist'],
+  ['Bluesky',    'https://bsky.app/profile/ambiencellist.bsky.social'],
   ['YouTube',    'https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q'],
   ['SoundCloud', 'https://soundcloud.com/ambiencellist'],
   ['Bandcamp',   'https://clairefitch.bandcamp.com/'],
