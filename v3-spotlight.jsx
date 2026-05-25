@@ -91,7 +91,7 @@ function V3About() {
         </div>
         <div style={{ fontSize: 20, lineHeight: 1.55, color: v3.ink }}>
           <p style={{ margin: 0, textWrap: 'pretty' }}>
-            Claire Fitch FHEA completed her PhD at Queen's University Belfast's Sonic Arts Research Centre (SARC) in 2019, supervised by Professor Michael Alcorn, and is the author of <em>Sounding Emerging Media</em> (Routledge, 2022).
+            Claire Fitch FHEA completed her PhD at Queen's University Belfast's Sonic Arts Research Centre (SARC) in 2019, supervised by Professor Michael Alcorn, and is the author of <em>Sounding Emerging Media</em>, published by Routledge (Fitch, 2022).
           </p>
           <p style={{ marginTop: 18, color: v3.muted, textWrap: 'pretty' }}>
             She was a cellist with the RTÉ National Symphony Orchestra from 1995 to 2012, and since 2015 has been a lecturer in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology. Through her production company Fitchsounds she has provided audio for the European Commission, Intel, AMD, Adobe and the Blender Institute, and is an Avid ACI Instructor for Sibelius.
