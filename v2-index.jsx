@@ -115,7 +115,7 @@ function V2About() {
           Claire Fitch FHEA is a composer, sound artist, cellist and lecturer working at the intersection of electroacoustic composition, electronic literature and game design.
         </p>
         <p style={{ color: v2.muted, fontSize: 18, textWrap: 'pretty' }}>
-          She completed her PhD at Queen's University Belfast's Sonic Arts Research Centre (SARC) in 2019, supervised by Professor Michael Alcorn, and is the author of <em>Sounding Emerging Media</em> (Routledge, 2022). She was a cellist with the RTÉ National Symphony Orchestra from 1995 to 2012, and since 2015 has been a lecturer in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology.
+          She completed her PhD at Queen's University Belfast's Sonic Arts Research Centre (SARC) in 2019, supervised by Professor Michael Alcorn, and is the author of <em>Sounding Emerging Media</em>, published by Routledge (Fitch, 2022). She was a cellist with the RTÉ National Symphony Orchestra from 1995 to 2012, and since 2015 has been a lecturer in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology.
         </p>
         <p style={{ color: v2.muted, fontSize: 18, textWrap: 'pretty' }}>
           Through her production company Fitchsounds she has provided audio for the European Commission, Intel, AMD, Adobe and the Blender Institute. She is an Avid ACI Instructor for Sibelius.
