@@ -169,6 +169,37 @@ function TeachingCareer() {
     </section>
   );
 }
+// ---------- 4a. Supervision ----------
+function Supervision() {
+  // Two separate lists — PhD and MA — so Claire can fill each in.
+  // Each row is: [years, candidate / institution, thesis title or topic].
+  // Replace the placeholder rows below with real entries.
+  const phd = [
+    ['YYYY–YYYY', 'Candidate name · Institution', 'Thesis title · role (Principal Supervisor / Co-Supervisor)'],
+    // add more PhD rows as needed
+  ];
+  const ma = [
+    ['YYYY', 'Candidate name · Institution', 'Dissertation / project title'],
+    // add more MA rows as needed
+  ];
+  return (
+    <section id="supervision" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
+        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Supervision.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>Doctoral &amp; postgraduate</div>
+      </div>
+      <p style={{ fontSize: 19, maxWidth: 760, color: SITE.muted, textWrap: 'pretty', marginBottom: 40 }}>
+        Doctoral and postgraduate supervision across practice-based research at the intersection of music technology, arts practice and human–computer interaction.
+      </p>
+
+      <h3 className="display" style={{ fontSize: 32, margin: '0 0 18px' }}>PhD supervision</h3>
+      <YearList rows={phd} secondColLabel="Candidate · Institution" />
+
+      <h3 className="display" style={{ fontSize: 32, margin: '64px 0 18px' }}>MA / MSc supervision</h3>
+      <YearList rows={ma} secondColLabel="Candidate · Institution" />
+    </section>
+  );
+}
 
 // ---------- 5. Qualifications & training ----------
 function Qualifications() {
