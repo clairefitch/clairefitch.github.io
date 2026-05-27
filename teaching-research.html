@@ -168,40 +168,7 @@ function TeachingCareer() {
       <YearList rows={positions} secondColLabel="Institution" />
     </section>
   );
-}
-// ---------- 4a. Supervision ----------
-function Supervision() {
-  // Two separate lists — PhD and MA — so Claire can fill each in.
-  // Each row is: [years, candidate / institution, thesis title or topic].
-  // Replace the placeholder rows below with real entries.
-  const phd = [
-    ['2020–2025', 'Odhrán Ó Casaide · DkIT-DCU', 'The Interface between Traditional Music and Art Music in Ireland: A Multimodal Arts Practice Research Study · Principal Supervisor · Conferred 2025'],
-    ['2020–2025', 'Éamonn Galldubh · DkIT-DCU', 'Between the Gigues and the Reels: Exploring Stylistic Approaches to Performing Baroque Music on the Uilleann Pipes · Principal Supervisor · Conferred 2025'],
-    ['2021–2023', 'Benedict Lamb O\u2019Sullivan · DkIT-DCU', 'Technology and New Interfaces in DIY Creative Practice· Principal Supervisor · Transferred 2023'],
-    // add more PhD rows as needed
-  ];
-  const ma = [
-    ['2020-2022', 'Ilan Metoudi · DkIT', 'Altering Perspective Listening by the use of Interactive Ambisonic/Multichannel Music'],
-    // add more MA rows as needed
-  ];
-  return (
-    <section id="supervision" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
-        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Supervision.</h2>
-        <div className="mono" style={{ color: SITE.muted }}>Doctoral &amp; postgraduate</div>
-      </div>
-      <p style={{ fontSize: 19, maxWidth: 760, color: SITE.muted, textWrap: 'pretty', marginBottom: 40 }}>
-        Doctoral and postgraduate supervision across practice-based research at the intersection of music technology, arts practice and human–computer interaction.
-      </p>
 
-      <h3 className="display" style={{ fontSize: 32, margin: '0 0 18px' }}>PhD supervision</h3>
-      <YearList rows={phd} secondColLabel="Candidate · Institution" />
-
-      <h3 className="display" style={{ fontSize: 32, margin: '64px 0 18px' }}>MA / MSc supervision</h3>
-      <YearList rows={ma} secondColLabel="Candidate · Institution" />
-    </section>
-  );
-}
 
 // ---------- 5. Qualifications & training ----------
 function Qualifications() {
@@ -290,6 +257,40 @@ function GuestLectures() {
         <div className="mono" style={{ color: SITE.muted }}>{rows.length} engagements</div>
       </div>
       <YearList rows={rows} secondColLabel="Host" />
+    </section>
+  );
+}
+}
+// ---------- 4a. Supervision ----------
+function Supervision() {
+  // Two separate lists — PhD and MA — so Claire can fill each in.
+  // Each row is: [years, candidate / institution, thesis title or topic].
+  // Replace the placeholder rows below with real entries.
+  const phd = [
+    ['2020–2025', 'Odhrán Ó Casaide · DkIT-DCU', 'The Interface between Traditional Music and Art Music in Ireland: A Multimodal Arts Practice Research Study · Principal Supervisor · Conferred 2025'],
+    ['2020–2025', 'Éamonn Galldubh · DkIT-DCU', 'Between the Gigues and the Reels: Exploring Stylistic Approaches to Performing Baroque Music on the Uilleann Pipes · Principal Supervisor · Conferred 2025'],
+    ['2021–2023', 'Benedict Lamb O\u2019Sullivan · DkIT-DCU', 'Technology and New Interfaces in DIY Creative Practice· Principal Supervisor · Transferred 2023'],
+    // add more PhD rows as needed
+  ];
+  const ma = [
+    ['2020-2022', 'Ilan Metoudi · DkIT', 'Altering Perspective Listening by the use of Interactive Ambisonic/Multichannel Music'],
+    // add more MA rows as needed
+  ];
+  return (
+    <section id="supervision" style={{ padding: '96px 56px', borderTop: `1px solid ${SITE.rule}` }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
+        <h2 className="display display-72" style={{ fontSize: 64, margin: 0 }}>Supervision.</h2>
+        <div className="mono" style={{ color: SITE.muted }}>Doctoral &amp; postgraduate</div>
+      </div>
+      <p style={{ fontSize: 19, maxWidth: 760, color: SITE.muted, textWrap: 'pretty', marginBottom: 40 }}>
+        Doctoral and postgraduate supervision across practice-based research at the intersection of music technology, arts practice and human–computer interaction.
+      </p>
+
+      <h3 className="display" style={{ fontSize: 32, margin: '0 0 18px' }}>PhD supervision</h3>
+      <YearList rows={phd} secondColLabel="Candidate · Institution" />
+
+      <h3 className="display" style={{ fontSize: 32, margin: '64px 0 18px' }}>MA / MSc supervision</h3>
+      <YearList rows={ma} secondColLabel="Candidate · Institution" />
     </section>
   );
 }
