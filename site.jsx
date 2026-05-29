@@ -129,7 +129,7 @@ const NAV = [
 ];
 
 const SOCIAL = [
-  ['Bluesky',    'https://bsky.app/profile/ambiencellist.bsky.social'],
+  ['Bluesky',    'https://bsky.app/profile/clairefitch.bsky.social'],
   ['YouTube',    'https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q'],
   ['SoundCloud', 'https://soundcloud.com/clairefitch'],
   ['Bandcamp',   'https://clairefitch.bandcamp.com/'],
