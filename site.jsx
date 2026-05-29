@@ -133,7 +133,7 @@ const SOCIAL = [
   ['YouTube',    'https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q'],
   ['SoundCloud', 'https://soundcloud.com/clairefitch'],
   ['Bandcamp',   'https://clairefitch.bandcamp.com/'],
-  ['Itch.io',    'https://ambiencellist.itch.io/'],
+  ['Itch.io',    'https://clairefitch.itch.io/'],
   ['WordPress',  'https://clairefitch.wordpress.com/'],
   ['ORCiD',      'https://orcid.org/0000-0002-6686-9345'],
   ['LinkedIn',   'https://www.linkedin.com/in/fitchclaire/'],
