@@ -115,7 +115,7 @@ const BIO_SHORT = "Composer, cellist, author and lecturer — working between so
 const BIO_LONG = [
   "Dr Claire Fitch FHEA is a composer, cellist, author and lecturer. She was a member of the RTÉ National Symphony Orchestra from 1995 to 2012, and is a Lecturer in Music in the Department of Creative Arts, Media and Music at Dundalk Institute of Technology.",
   "Claire's award-winning audio production company has worked with clients including Intel, AMD, TG4, the European Commission, Adobe, the Blender Institute, Riverdeep and Forfás — providing music, sound effects and dialogue for games, advertising, theatre, training productions, film, radio, podcast and television.",
-  "Her sonic art output is inspired by electronic literature and game design, with performances on RTÉ Lyric FM and RTÉ Radio One; at conferences such as the Irish Sound, Science and Technology Association, the Electronic Literature Organisation and Kylie: The Symposium; and at festivals such as Galway Arts Festival, Music Current, HearSay, Hilltown, First Fortnight and SPIKE. Routledge published Sounding Emerging Media in 2022, with further output including the AR zine (RE)Verb presenting Vanguard Voices (with McErlean and Murray, 2022), and “Can’t Get You Out of My Web: Remixing Kylie as Digital Creative Practice” (2024) in Kylie Minogue: Critical Insights into Music and Media Celebrity (O’Neill & Pramaggiore, eds., Bloomsbury, 2024)."
+  "Her sonic art output is inspired by electronic literature and game design, with performances on RTÉ Lyric FM and RTÉ Radio One; at conferences such as the Irish Sound, Science and Technology Association, the Electronic Literature Organisation and Kylie: The Symposium; and at festivals such as Galway Arts Festival, Music Current, Sonorities, HearSay, Hilltown, First Fortnight and SPIKE. Routledge published Sounding Emerging Media in 2022, with further output including the AR zine (RE)Verb presenting Vanguard Voices (with McErlean and Murray, 2022), and “Can’t Get You Out of My Web: Remixing Kylie as Digital Creative Practice” (2024) in Kylie Minogue: Critical Insights into Music and Media Celebrity (O’Neill & Pramaggiore, eds., Bloomsbury, 2024)."
 ];
 
 // --- Site navigation map ---
@@ -129,14 +129,14 @@ const NAV = [
 ];
 
 const SOCIAL = [
-  ['Bluesky',    'https://bsky.app/profile/ambiencellist.bsky.social'],
+  ['Bluesky',    'https://bsky.app/profile/clairefitch.bsky.social'],
   ['YouTube',    'https://www.youtube.com/channel/UCvAuMBbFlkFRf77hqLWBL9Q'],
   ['SoundCloud', 'https://soundcloud.com/clairefitch'],
   ['Bandcamp',   'https://clairefitch.bandcamp.com/'],
-  ['Itch.io',    'https://ambiencellist.itch.io/'],
+  ['Itch.io',    'https://clairefitch.itch.io/'],
   ['WordPress',  'https://clairefitch.wordpress.com/'],
   ['ORCiD',      'https://orcid.org/0000-0002-6686-9345'],
-  ['LinkedIn',   'https://www.linkedin.com/in/fitchclaire/'],
+  ['LinkedIn',   'https://www.linkedin.com/in/claire-fitch/'],
 ];
 
 // ---------------- Nav (light, used over light pages or below hero) ----------------
