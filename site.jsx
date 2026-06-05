@@ -44,7 +44,12 @@ const SITE = {
       .nav-links { display: none !important; }
       .nav-burger { display: flex !important; }
     }
+/* Hero text comes first on mobile, image below */
     @media (max-width: 880px) {
+
+.section-hero-text-order { order: -1; }
+.section-hero-text { padding: 100px 20px 40px !important; }
+.section-hero-img { min-height: 220px !important; }
       .hero-grid, .about-grid, .works-card, .footer-grid, .contact-grid, .cta-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
       .h-padded { padding-left: 20px !important; padding-right: 20px !important; }
       .hero-display { font-size: 56px !important; line-height: 1 !important; }
