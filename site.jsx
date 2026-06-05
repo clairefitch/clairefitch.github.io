@@ -216,12 +216,8 @@ function SectionHero({ kicker, title, blurb, img, current }) {
       <div className="hero-grid" style={{
         display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 560,
       }}>
-        <div className="section-hero-img" style={{
-          background: img ? `url(${img}) center/cover` : SITE.dark,
-          filter: 'brightness(0.85) contrast(1.02) saturate(0.92) sepia(0.16)',
-          minHeight: 420,
-        }} />
-        <div className="h-padded section-hero-text" style={{ padding: '120px 64px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        {/* Text block: order-1 on desktop, order-first on mobile via CSS */}
+        <div className="h-padded section-hero-text section-hero-text-order" style={{ padding: '120px 64px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div className="tape tape-light" style={{ marginBottom: 28, alignSelf: 'flex-start' }}>{kicker}</div>
           <h1 className="display hero-display" style={{ fontSize: 96, margin: 0, color: SITE.darkPaper }}>{title}</h1>
           <p style={{ marginTop: 28, fontSize: 20, lineHeight: 1.5, color: 'rgba(246,240,223,0.82)', maxWidth: 540, textWrap: 'pretty' }}>{blurb}</p>
@@ -229,6 +225,12 @@ function SectionHero({ kicker, title, blurb, img, current }) {
             <a href="index.html" className="mono under-dark" style={{ color: SITE.darkPaper }}>← Back to home</a>
           </div>
         </div>
+        {/* Image block: order-2 on desktop, below text on mobile */}
+        <div className="section-hero-img" style={{
+          background: img ? `url(${img}) center/cover` : SITE.dark,
+          filter: 'brightness(0.85) contrast(1.02) saturate(0.92) sepia(0.16)',
+          minHeight: 420,
+        }} />
       </div>
     </header>
   );
