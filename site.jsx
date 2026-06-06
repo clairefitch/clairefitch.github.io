@@ -48,8 +48,8 @@ const SITE = {
     @media (max-width: 880px) {
 
 .section-hero-text-order { order: -1; }
-.section-hero-text { padding: 100px 20px 40px !important; }
-.section-hero-img { min-height: 220px !important; }
+.section-hero-text { padding: 140px 20px 40px !important; }
+.section-hero-img { min-height: 160px !important; }
       .hero-grid, .about-grid, .works-card, .footer-grid, .contact-grid, .cta-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
       .h-padded { padding-left: 20px !important; padding-right: 20px !important; }
       .hero-display { font-size: 56px !important; line-height: 1 !important; }
