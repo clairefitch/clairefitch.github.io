@@ -221,7 +221,7 @@ function SectionHero({ kicker, title, blurb, img, current }) {
       <div className="hero-grid" style={{
         display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 560,
       }}>
-        {/* Text block: order-1 on desktop, order-first on mobile via CSS */}
+       
         <div className="h-padded section-hero-text section-hero-text-order" style={{ padding: '120px 64px 80px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div className="tape tape-light" style={{ marginBottom: 28, alignSelf: 'flex-start' }}>{kicker}</div>
           <h1 className="display hero-display" style={{ fontSize: 96, margin: 0, color: SITE.darkPaper }}>{title}</h1>
