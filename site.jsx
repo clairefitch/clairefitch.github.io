@@ -44,7 +44,7 @@ const SITE = {
       .nav-links { display: none !important; }
       .nav-burger { display: flex !important; }
     }
-/* Hero text comes first on mobile, image below */
+
     @media (max-width: 880px) {
 
 .section-hero-text-order { order: -1; }
