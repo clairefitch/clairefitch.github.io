@@ -230,7 +230,7 @@ function SectionHero({ kicker, title, blurb, img, current }) {
             <a href="index.html" className="mono under-dark" style={{ color: SITE.darkPaper }}>← Back to home</a>
           </div>
         </div>
-        {/* Image block: order-2 on desktop, below text on mobile */}
+        
         <div className="section-hero-img" style={{
           background: img ? `url(${img}) center/cover` : SITE.dark,
           filter: 'brightness(0.85) contrast(1.02) saturate(0.92) sepia(0.16)',
