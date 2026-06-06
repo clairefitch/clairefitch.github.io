@@ -86,9 +86,7 @@ const SITE = {
       .home-hero { height: auto !important; min-height: 620px !important; }
       .home-hero-content { position: static !important; padding: 120px 20px 56px !important; }
       .home-hero-bg { position: absolute !important; }
-      /* Section hero hero-grid image min-height smaller */
-      .section-hero-img { min-height: 240px !important; }
-      .section-hero-text { padding: 28px 20px 56px !important; }
+      
       /* Nav padding shrink */
       .site-nav { padding: 16px 20px !important; }
       /* Footer correspondence font */
