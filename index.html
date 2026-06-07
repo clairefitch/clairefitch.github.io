@@ -23,7 +23,7 @@
 
 function HomeHero() {
   return (
-    <section className="home-hero" style={{ position: 'relative', minHeight: 620, overflow: 'hidden', background: SITE.dark, color: SITE.darkPaper }}>
+    <section className="home-hero" style={{ position: 'relative', minHeight: 620, overflow: 'hidden', background: SITE.dark, color: SITE.darkPaper, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
       <SiteNav mode="overlay" />
       <div className="home-hero-bg" style={{
         position: 'absolute', inset: 0,
@@ -31,7 +31,7 @@ function HomeHero() {
         filter: 'brightness(0.6) contrast(1.05) saturate(0.92) sepia(0.18)',
       }} />
       <div className="home-hero-bg" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 60%, rgba(14,10,5,0.72) 100%)' }} />
-      <div className="h-padded home-hero-content" style={{ position: 'absolute', left: 56, bottom: 72, right: 56, top: 56 }}>
+      <div className="h-padded home-hero-content" style={{ position: 'relative', zIndex: 1, padding: '0 56px 72px' }}>
         <div className="tape tape-light" style={{ marginBottom: 28 }}>Featured · Sonic Art · 2021</div>
         <h1 className="display hero-display" style={{ fontSize: 132, margin: 0, color: SITE.darkPaper }}>Claire&nbsp;Fitch</h1>
         <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 56, marginTop: 36, alignItems: 'end' }}>
@@ -48,6 +48,7 @@ function HomeHero() {
       </div>
     </section>
   );
+
 }
 
 function PlayBar() {
