@@ -16,16 +16,16 @@ The site brings together academic work, sonic art, electronic literature, game s
 
 Each of the following folders contains a sonic art web page paired with a Unity player for the associated game score:
 
-- `3DIM/` — *3 Days In May*
-- `ATBS/` — *And The Birds Sang*
-- `FFDEAD/` — *FFDEAD*
-- `Look/` — *Look*
-- `QTE/` — *Questioning The Elements*
+- `3DIM/` — *Three Days In May*, recordings from Drogheda and Laytown in May 2015, folded into each other as a mass — no foreground, no background.
+- `ATBS/` — *And The Birds Sang*, An interactive game score where the performer navigates a branching environment of cues; the cello sounds and field recordings shift with the path taken.
+- `FFDEAD/` — *FFDEAD*, inspired by the hexadecimal code for the JavaScript colour Navajowhite. A sonnet written and recorded; the audio basis for the first gamescore.
+- `Look/` — *Look (FFEBCD)*
+- `QTE/` — *Questioning The Elements*, a score that asks the player to interrogate the elements of cello performance themselves — bow pressure, breath, intervals — as triggers for sonic environments.
 - `Serration/` — *Serration*
-- `TGS/` — *TGS*
-- `UnityBeeps/` — *UnityBeeps*
-- `ValenT/` — *ValenT*
-- `WCID/` — *We Called It Dirt*
+- `TGS/` — *Tale of a Great Sham(e) Text*, a text-driven score weaving voice, instrument and on-screen prompts into a single act of reading-as-performance.
+- `UnityBeeps/` — *UnityBeeps*, two beeps — 110 bpm and 111 bpm. Two minutes to drift into sync, two minutes to drift out again.
+- `ValenT/` — *ValenT*, a live remix / improvisation of Gertrude Stein reading A Valentine To Sherwood Anderson, 1922.
+- `WCID/` — *We Called It Dirt*, type the letters W, E, C, A, L, L, E, D, I, T, D, I, R, T to play.
 - `JSONBASH/` — *JSON B(ourne)AS(soon)H*, a browser-based artwork encoding bassoon lines from the five Bourne film scores as executable JSON
 
 ## Notes
