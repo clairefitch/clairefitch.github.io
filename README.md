@@ -11,6 +11,21 @@ The site brings together academic work, sonic art, electronic literature, game s
 - `sonic-art.html`, `electronic-literature.html`, `game-scores.html`, `publications.html`, `production-music.html` — section pages
 - `teaching-research.html` — teaching, supervision, qualifications, leadership, conferences
 - `contact.html` — contact page
+
+### Individual works
+
+Each of the following folders contains a sonic art web page paired with a Unity player for the associated game score:
+
+- `3DIM/` — *3 Days In May*
+- `ATBS/` — *And The Birds Sang*
+- `FFDEAD/` — *FFDEAD*
+- `Look/` — *Look*
+- `QTE/` — *Questioning The Elements*
+- `Serration/` — *Serration*
+- `TGS/` — *TGS*
+- `UnityBeeps/` — *UnityBeeps*
+- `ValenT/` — *ValenT*
+- `WCID/` — *We Called It Dirt*
 - `JSONBASH/` — *JSON B(ourne)AS(soon)H*, a browser-based artwork encoding bassoon lines from the five Bourne film scores as executable JSON
 
 ## Notes
