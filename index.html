@@ -107,9 +107,10 @@ function WorkCard({ tag, title, blurb, img, ratio, items, href }) {
   return (
     <div className="card works-card" style={{ padding: 0, display: 'grid', gridTemplateColumns: '1.1fr 1fr', overflow: 'hidden' }}>
       <a href={href} className="ph-img" style={{
-        aspectRatio: ratio || '4/5', backgroundImage: `url(${img})`,
-        display: 'block', minHeight: 320,
-      }} />
+  aspectRatio: ratio || '4/5', backgroundImage: `url(${img})`,
+  backgroundSize: 'cover', backgroundPosition: 'center',
+  display: 'block', minHeight: 320,
+}} />
       <div style={{ padding: '40px 40px 32px', display: 'flex', flexDirection: 'column' }}>
         <div className="mono" style={{ color: SITE.accent, marginBottom: 14 }}>{tag}</div>
         <h3 className="display display-56" style={{ fontSize: 42, margin: 0, marginBottom: 14 }}>
