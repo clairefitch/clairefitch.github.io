@@ -249,7 +249,7 @@ function WorkEntry({ index, year, title, kicker, embedId, body, credits, links, 
       {embedId
         ? <iframe className="embed" src={`https://www.youtube.com/embed/${embedId}`} title={title} allow="accelerometer; autoplay; encrypted-media; gyroscope" allowFullScreen />
         : image
-          ? <div className="ph-img" style={{ aspectRatio: '16/9', backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          ? <div className="ph-img" style={{ aspectRatio: '16/9', backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center', border: `1px solid ${SITE.rule}` }} />
           : <div style={{ aspectRatio: '16/9', background: SITE.ink, color: SITE.muted, display: 'grid', placeItems: 'center', fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase' }}>[ Media ]</div>}
     </div>
   );
