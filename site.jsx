@@ -1,5 +1,5 @@
 // site.jsx — shared design system for clairefitch.com redesign
-// Variation C ("Spotlight"): warm cream paper, serif headlines (Lora),
+// Variation C ("Spotlight"): warm cream paper, sans headlines (DM Sans),
 // IBM Plex sans/mono detail, dark navigation, terracotta accent.
 // Used by every page: index.html and each section detail page.
 
@@ -25,11 +25,11 @@ const SITE = {
   s.id = 'site-css';
   s.textContent = `
     html, body { margin: 0; padding: 0; background: ${SITE.paper}; color: ${SITE.ink}; }
-    body { font-family: 'Lora', 'Source Serif Pro', Georgia, serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    body { font-family: 'DM Sans', 'IBM Plex Sans', system-ui, sans-serif; font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
     *::selection { background: ${SITE.ink}; color: ${SITE.paper}; }
     .mono { font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
     .sans { font-family: 'IBM Plex Sans', system-ui, sans-serif; }
-    .display { font-family: 'Lora', serif; font-weight: 500; letter-spacing: -0.025em; line-height: 0.96; }
+    .display { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 500; letter-spacing: -0.025em; line-height: 0.96; }
     a { color: inherit; text-decoration: none; }
     a.under { border-bottom: 1px solid ${SITE.faint}; transition: border-color .15s; }
     a.under:hover { border-bottom-color: ${SITE.ink}; }
@@ -104,7 +104,7 @@ const SITE = {
     .nav-burger { display: none; align-items: center; gap: 10px; cursor: pointer; background: transparent; border: 1px solid currentColor; padding: 7px 12px 6px; border-radius: 999px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
     .nav-burger:hover { background: rgba(0,0,0,0.04); }
     .nav-drawer { position: fixed; inset: 0; z-index: 100; background: ${SITE.dark}; color: ${SITE.darkPaper}; display: flex; flex-direction: column; padding: 24px 24px 48px; overflow-y: auto; }
-    .nav-drawer a { color: ${SITE.darkPaper}; display: block; padding: 18px 0; border-bottom: 1px solid ${SITE.darkRule}; font-family: 'Lora', serif; font-size: 28px; letter-spacing: -0.01em; }
+    .nav-drawer a { color: ${SITE.darkPaper}; display: block; padding: 18px 0; border-bottom: 1px solid ${SITE.darkRule}; font-family: 'DM Sans', system-ui, sans-serif; font-size: 28px; letter-spacing: -0.01em; }
     .nav-drawer a .mono-sub { display: block; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: ${SITE.darkFaint}; margin-top: 4px; }
     .nav-drawer-top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 24px; border-bottom: 1px solid ${SITE.darkRule}; margin-bottom: 8px; }
     .nav-drawer-close { background: transparent; border: 1px solid ${SITE.darkFaint}; color: ${SITE.darkPaper}; padding: 7px 14px; border-radius: 999px; cursor: pointer; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
@@ -249,7 +249,7 @@ function WorkEntry({ index, year, title, kicker, embedId, body, credits, links, 
       {embedId
         ? <iframe className="embed" src={`https://www.youtube.com/embed/${embedId}`} title={title} allow="accelerometer; autoplay; encrypted-media; gyroscope" allowFullScreen />
         : image
-          ? <div className="ph-img" style={{ aspectRatio: '16/9', backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          ? <div className="ph-img" style={{ aspectRatio: '16/9', backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center', border: `1px solid ${SITE.rule}` }} />
           : <div style={{ aspectRatio: '16/9', background: SITE.ink, color: SITE.muted, display: 'grid', placeItems: 'center', fontFamily: "'IBM Plex Mono', monospace", fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase' }}>[ Media ]</div>}
     </div>
   );
@@ -344,7 +344,7 @@ function SiteFooter() {
       </div>
       <div className="mono" style={{ marginTop: 64, paddingTop: 24, borderTop: `1px solid ${SITE.darkRule}`, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, color: SITE.darkFaint }}>
         <span>© Claire Fitch · All rights reserved</span>
-        <span>Dublin &amp; Belfast · Set in Lora &amp; IBM Plex</span>
+        <span>Dublin &amp; Belfast · Set in DM Sans &amp; IBM Plex</span>
       </div>
     </footer>
   );
