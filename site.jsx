@@ -230,10 +230,12 @@ function SectionHero({ kicker, title, blurb, img, current }) {
         </div>
         
         <div className="section-hero-img" style={{
-          background: img ? `url(${img}) center/cover` : SITE.dark,
-          filter: 'brightness(0.85) contrast(1.02) saturate(0.92) sepia(0.16)',
-          minHeight: 420,
-        }} />
+  background: img ? `url(${img})` : SITE.dark,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  filter: 'brightness(0.85) contrast(1.02) saturate(0.92) sepia(0.16)',
+  minHeight: 420,
+}} />
       </div>
     </header>
   );
